@@ -8,5 +8,5 @@
 
 ## 10.09
 - 로그인 관련 php(안드로이드와의 연결 필요, apache를 통한 서버 구축 완료)
-- user 관련 db 
+- user 관련 db 생성
 -- pid int primary key autoincrement, _id char(20), pw char(20), authority int
