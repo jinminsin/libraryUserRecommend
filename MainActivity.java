@@ -6,13 +6,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     TextView a;
+    RequestQueue q = Volley.newRequestQueue(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +28,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("Result","["+response+"]");
                            }
         };
-
-        DBResponse a=new DBResponse();
-        a.response(this,"login","test","test",responseListener);
+        DBResponse.loginResponse(q,"test","test",responseListener);
     }
 }
