@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DBResponse {
-    static String URL = "http://192.168.123.105:80/";
+    static String URL = "아이피";
 
     static void loginResponse(RequestQueue q, String id, String pw, Response.Listener<String> listener){
         userDBResponse res = new userDBResponse(URL+ "login.php",id,pw,listener);
