@@ -1,12 +1,12 @@
 package com.slave_mk14.libraryuserrecommendation;
 
 public class Post {
-    private int cid;
-    private String title;
-    private String subtitle;
-    private String owner;
-    private String createDate;
-    private String password;
+    private int cid;//커뮤니티 아이디
+    private String title;//게시물 제목
+    private String subtitle;//게시물 내용
+    private String owner;//작성자
+    private String createDate;//생성일
+    private String password;//게시물 비밀번호
 
     public int getCid() {
         return cid;

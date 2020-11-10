@@ -1,8 +1,8 @@
 package com.slave_mk14.libraryuserrecommendation;
 
 public class User {
-    int seedid;
-    String id;
+    int seedid;//시드 아이디
+    String id; //아이디
 
     public int getSeedid() {
         return seedid;

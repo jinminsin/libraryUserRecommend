@@ -12,42 +12,49 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DBResponse {
-    static String URL = "아이피";
+    static String URL = "아이피 주소";
 
     static void loginResponse(RequestQueue q, String id, String pw, Response.Listener<String> listener){
         userDBResponse res = new userDBResponse(URL+ "login.php",id,pw,listener);
         q.add(res);
-    }
+        //Return String "0","-1","1"
+    }//로그인
 
     static void joinResponse(RequestQueue q, String id, String pw, Response.Listener<String> listener){
         userDBResponse res = new userDBResponse(URL+ "join.php",id,pw,listener);
         q.add(res);
-    }
+        //Return String "-1","1"
+    }//회원가입
 
     static void searchCommunityResponse(RequestQueue q, Response.Listener<String> listener){
         communityDBResponse res = new communityDBResponse(URL+ "community.php",listener);
         q.add(res);
-    }
+        //Return Json : [{"id":"1","name":"테스트 커뮤니티","detail":"테스트 중입니다.","owner":"운영자","createDate":"2020-11-09 13:28"}]
+    }//커뮤니티 리스트
 
     static void searchPostResponse(RequestQueue q, int cid, Response.Listener<String> listener){
         postDBResponse res = new postDBResponse(URL+ "post.php",cid,listener);
         q.add(res);
-    }
+        //Return Json : [{"id":"1","title":"1","subtitle":"테스트 게시물","owner":"테스트 시행 중입니다.","createDate":"운영자","password":"2020-11-09 13:42"}]
+    }//게시물 리스트
 
     static void addPostResponse(RequestQueue q, Post p, Response.Listener<String> listener){
         postDBResponse res = new postDBResponse(URL+ "createPost.php", p, listener);
         q.add(res);
-    }
+        //Return String "-1","1"
+    }//게시물 작성
 
     static void searchCommentResponse(RequestQueue q, int pid, Response.Listener<String> listener){
         commentDBResponse res = new commentDBResponse(URL+ "comment.php",pid,listener);
         q.add(res);
-    }
+        //Return Json : [{"id":"1","subtitle":"1","owner":"테스트 댓글 시행 중입니다.","createDate":"운영자","password":"2020-11-09 13:44"}]
+    }//댓글 리스트
 
     static void addCommentResponse(RequestQueue q, Comment c, Response.Listener<String> listener){
         commentDBResponse res = new commentDBResponse(URL+ "createComment.php",c,listener);
         q.add(res);
-    }
+        //Return String "-1","1"
+    }//댓글 작성
 
     static class userDBResponse extends StringRequest {
         private Map<String, String> map;
