@@ -15,12 +15,13 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     TextView a;
-    RequestQueue q = Volley.newRequestQueue(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        RequestQueue q = Volley.newRequestQueue(this);
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -29,6 +30,6 @@ public class MainActivity extends AppCompatActivity {
                            }
         };
 
-        DBResponse.loginResponse(q,"test","test",responseListener);
+        DBResponse.searchCommunityResponse(q, responseListener);
     }
 }
