@@ -13,7 +13,7 @@ while($row = mysqli_fetch_array($result)){
       array_push($res, array('id' =>$row[0], 'subtitle'=>$row[1], 'owner'=>$row[2], 'createDate'=>$row[3], 'password'=>$row[4]));  
     }  
        
-   echo json_encode($res, JSON_UNESCAPED_UNICODE); 
+   echo json_encode(array("result" => $res), JSON_UNESCAPED_UNICODE); 
        
     mysqli_close($conn);  
 ?>
