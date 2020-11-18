@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DBResponse {
-    static String URL = "http://192.168.123.105:80/";
+    static String URL = "http://39.112.64.186/";
 
     static void loginResponse(RequestQueue q, String id, String pw, Response.Listener<String> listener){
         userDBResponse res = new userDBResponse(URL+ "login.php",id,pw,listener);
@@ -35,10 +35,10 @@ public class DBResponse {
     static void searchPostResponse(RequestQueue q, int cid, Response.Listener<String> listener){
         postDBResponse res = new postDBResponse(URL+ "post.php",cid,listener);
         q.add(res);
-        //Return Json : {"result":[{"id":"1","title":"1","subtitle":"테스트 게시물","owner":"테스트 시행 중입니다.","createDate":"운영자","password":"2020-11-09 13:42"}]}
+        //Return Json : {{"result":[{"cid":"1","id":"1","title":"테스트 게시물","subtitle":"테스트 시행 중입니다.","owner":"운영자","createDate":"2020-11-09 13:42","password":"xxxx"}]}
     }//게시물 리스트
 
-    static void addPostResponse(RequestQueue q, Post p, Response.Listener<String> listener){
+    static void addPostResponse(RequestQueue q, Post_Item p, Response.Listener<String> listener){
         postDBResponse res = new postDBResponse(URL+ "createPost.php", p, listener);
         q.add(res);
         //Return String "-1","1"
@@ -47,10 +47,10 @@ public class DBResponse {
     static void searchCommentResponse(RequestQueue q, int pid, Response.Listener<String> listener){
         commentDBResponse res = new commentDBResponse(URL+ "comment.php",pid,listener);
         q.add(res);
-        //Return Json : {"result":[{"id":"1","subtitle":"1","owner":"테스트 댓글 시행 중입니다.","createDate":"운영자","password":"2020-11-09 13:44"}]}
+        //Return Json : {"result":[{"pid":"1","id":"1","subtitle":"테스트 댓글 시행 중입니다.","owner":"운영자","createDate":"2020-11-09 13:44","password":"yyyy"}]}
     }//댓글 리스트
 
-    static void addCommentResponse(RequestQueue q, Comment c, Response.Listener<String> listener){
+    static void addCommentResponse(RequestQueue q, Comment_Item c, Response.Listener<String> listener){
         commentDBResponse res = new commentDBResponse(URL+ "createComment.php",c,listener);
         q.add(res);
         //Return String "-1","1"
@@ -60,7 +60,7 @@ public class DBResponse {
         private Map<String, String> map;
 
         public userDBResponse(String url, String id, String pw, Response.Listener<String> listener) {
-            super(Request.Method.POST, url, listener, null);
+            super(Method.POST, url, listener, null);
             map = new HashMap<>();
             map.put("id", id);
             map.put("pw", pw);
@@ -76,7 +76,7 @@ public class DBResponse {
         private Map<String, String> map;
 
         public communityDBResponse(String url, Response.Listener<String> listener) {
-            super(Request.Method.POST, url, listener, null);
+            super(Method.POST, url, listener, null);
             map = new HashMap<>();
         }
 
@@ -90,13 +90,13 @@ public class DBResponse {
         private Map<String, String> map;
 
         public postDBResponse(String url, int cid, Response.Listener<String> listener) {
-            super(Request.Method.POST, url, listener, null);
+            super(Method.POST, url, listener, null);
             map = new HashMap<>();
             map.put("cid", ""+cid);
         }
 
-        public postDBResponse(String url, Post p, Response.Listener<String> listener) {
-            super(Request.Method.POST, url, listener, null);
+        public postDBResponse(String url, Post_Item p, Response.Listener<String> listener) {
+            super(Method.POST, url, listener, null);
             map = new HashMap<>();
             map.put("cid", ""+p.getCid());
             map.put("title",p.getTitle());
@@ -116,13 +116,13 @@ public class DBResponse {
         private Map<String, String> map;
 
         public commentDBResponse(String url, int pid, Response.Listener<String> listener) {
-            super(Request.Method.POST, url, listener, null);
+            super(Method.POST, url, listener, null);
             map = new HashMap<>();
             map.put("pid", ""+pid);
         }
 
-        public commentDBResponse(String url, Comment c, Response.Listener<String> listener) {
-            super(Request.Method.POST, url, listener, null);
+        public commentDBResponse(String url, Comment_Item c, Response.Listener<String> listener) {
+            super(Method.POST, url, listener, null);
             map = new HashMap<>();
             map.put("pid", ""+c.getPid());
             map.put("subtitle",c.getSubtitle());
