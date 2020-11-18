@@ -10,7 +10,7 @@ $result = mysqli_query($conn, $query);
 $res = array();
 
 while($row = mysqli_fetch_array($result)){  
-      array_push($res, array('id' =>$row[0], 'subtitle'=>$row[1], 'owner'=>$row[2], 'createDate'=>$row[3], 'password'=>$row[4]));  
+      array_push($res, array('pid' =>$row[0],'id' =>$row[1], 'subtitle'=>$row[2], 'owner'=>$row[3], 'createDate'=>$row[4], 'password'=>$row[5]));  
     }  
        
    echo json_encode(array("result" => $res), JSON_UNESCAPED_UNICODE); 
