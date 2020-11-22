@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:padding="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:text="게시판 아이디 "
+        android:id="@+id/cid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="게시글 제목 "
+        android:layout_centerHorizontal="true"
+        android:padding="10dp"
+        android:textSize="15dp"
+        android:id="@+id/p_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_below="@+id/p_title"
+        android:layout_centerHorizontal="true"
+        android:text="게시글 내용 "
+        android:id="@+id/p_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/p_subtitle"
+        android:text="게시글 작성자 "
+        android:id="@+id/p_owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:layout_toRightOf="@+id/p_title"
+        android:text="게시글 생성일 "
+        android:id="@+id/p_createDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/p_owner"
+        android:text="게시글 비밀번호 "
+        android:id="@+id/p_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

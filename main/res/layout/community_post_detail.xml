@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent">
 
-    <EditText
-
-        android:id="@+id/title_post_edit"
+    <TextView
+        android:text="댓글"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="제목을 쓰세요"/>
-
-    <EditText
-        android:maxHeight="100dp"
-        android:id="@+id/post_edit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="내용"/>
-
-    <Button
-        android:layout_marginEnd="10dp"
-        android:text="Go"
-        android:id="@+id/post_button"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <ListView
+        android:id="@+id/Detail_ListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
 
 </LinearLayout>
