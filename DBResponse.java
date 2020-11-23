@@ -2,7 +2,6 @@ package com.slave_mk14.libraryuserrecommendation;
 
 
 import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
@@ -11,7 +10,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DBResponse {
-    static String URL = "http://39.112.64.186/";
+    //static String URL = "http://39.112.64.186/";
+    static String URL = "http://192.168.0.17/";
 
     static void loginResponse(RequestQueue q, String id, String pw, Response.Listener<String> listener){
         userDBResponse res = new userDBResponse(URL+ "login.php",id,pw,listener);
@@ -38,7 +38,7 @@ public class DBResponse {
         //Return Json : {{"result":[{"cid":"1","id":"1","title":"테스트 게시물","subtitle":"테스트 시행 중입니다.","owner":"운영자","createDate":"2020-11-09 13:42","password":"xxxx"}]}
     }//게시물 리스트
 
-    static void addPostResponse(RequestQueue q, Post_Item p, Response.Listener<String> listener){
+    static void addPostResponse(RequestQueue q, Post p, Response.Listener<String> listener){
         postDBResponse res = new postDBResponse(URL+ "createPost.php", p, listener);
         q.add(res);
         //Return String "-1","1"
@@ -50,7 +50,7 @@ public class DBResponse {
         //Return Json : {"result":[{"pid":"1","id":"1","subtitle":"테스트 댓글 시행 중입니다.","owner":"운영자","createDate":"2020-11-09 13:44","password":"yyyy"}]}
     }//댓글 리스트
 
-    static void addCommentResponse(RequestQueue q, Comment_Item c, Response.Listener<String> listener){
+    static void addCommentResponse(RequestQueue q, Comment c, Response.Listener<String> listener){
         commentDBResponse res = new commentDBResponse(URL+ "createComment.php",c,listener);
         q.add(res);
         //Return String "-1","1"
@@ -95,7 +95,7 @@ public class DBResponse {
             map.put("cid", ""+cid);
         }
 
-        public postDBResponse(String url, Post_Item p, Response.Listener<String> listener) {
+        public postDBResponse(String url, Post p, Response.Listener<String> listener) {
             super(Method.POST, url, listener, null);
             map = new HashMap<>();
             map.put("cid", ""+p.getCid());
@@ -121,7 +121,7 @@ public class DBResponse {
             map.put("pid", ""+pid);
         }
 
-        public commentDBResponse(String url, Comment_Item c, Response.Listener<String> listener) {
+        public commentDBResponse(String url, Comment c, Response.Listener<String> listener) {
             super(Method.POST, url, listener, null);
             map = new HashMap<>();
             map.put("pid", ""+c.getPid());
