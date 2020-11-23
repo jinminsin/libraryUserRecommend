@@ -16,8 +16,8 @@ public class DBResponse {
     static void loginResponse(RequestQueue q, String id, String pw, Response.Listener<String> listener){
         userDBResponse res = new userDBResponse(URL+ "login.php",id,pw,listener);
         q.add(res);
-        //Return Json {"success":"1","result":[{"seedid":"1","id":"test","pw":"test","authority":"1","type":"-1"}]} or
-        //Return Json {"success":"-1"}
+        //Return Json {"success":"1","result":[{"seedid":"1","id":"test","pw":"test","authority":"1","type":"-1"}]}(성공) or
+        //Return Json {"success":"-1"}(실패),{"success":"0"}(없음)
     }//로그인
 
     static void joinResponse(RequestQueue q, String id, String pw, Response.Listener<String> listener){

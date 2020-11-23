@@ -15,10 +15,14 @@ public class FragmentHelper {
     private Fragment settingFragment;
 
     public FragmentHelper(){
-        mainFragment = new CommunityListFragment();
+        mainFragment = new HomeFragment();
         testFragment = new TestFragment();
         communityFragment = new CommunityListFragment();
         settingFragment = new SettingFragment();
+    }
+
+    public void initialFragment(AppCompatActivity activity){
+        activity.getSupportFragmentManager().beginTransaction().replace(R.id.contentFragment, mainFragment).commit();
     }
 
     public void moveFragment(int index, int viewId, AppCompatActivity activity){

@@ -8,7 +8,7 @@ class Comment {
     private String createDate;//생성일
     private String password;//댓글 비밀번호
 
-    Comment(int pid, String subtitle, String owner, String createDate , String password) {
+    public Comment(int pid, String subtitle, String owner, String createDate , String password) {
         this.pid = pid;
         this.subtitle = subtitle;
         this.owner = owner;
@@ -17,7 +17,7 @@ class Comment {
 
     }
 
-    Comment(int pid, int id, String subtitle, String owner, String createDate , String password) {
+    public Comment(int pid, int id, String subtitle, String owner, String createDate , String password) {
         this.pid = pid;
         this.id = id;
         this.subtitle = subtitle;

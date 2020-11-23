@@ -61,7 +61,7 @@ public class PostListFragment extends Fragment {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             Post item = (Post)parent.getItemAtPosition(position);
-                            MainActivity.fManager.goPostContentFragment(item,R.id.yeah, PostListFragment.this);
+                            MainActivity.fManager.goPostContentFragment(item,R.id.contentFragment, PostListFragment.this);
                         }
                     });
                 } catch (JSONException e) {

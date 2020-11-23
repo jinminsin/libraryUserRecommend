@@ -1,22 +1,29 @@
 package com.slave_mk14.libraryuserrecommendation;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.TextView;
+
 import com.google.android.material.tabs.TabLayout;
 import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
     static FragmentHelper fManager = new FragmentHelper();
+    static User mUser = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if(mUser == null){
+            startActivity(new Intent(this, LogInActivity.class));
+        }
+
         TabLayout tab = findViewById(R.id.tab);
+        fManager.initialFragment(this);
 
         ArrayList<Integer> images = new ArrayList<>();
         images.add(R.drawable.ic_launcher_foreground);
@@ -31,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 //do stuff here
-                fManager.moveFragment(tab.getPosition(), R.id.yeah,MainActivity.this);
+                fManager.moveFragment(tab.getPosition(), R.id.contentFragment,MainActivity.this);
             }
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {}

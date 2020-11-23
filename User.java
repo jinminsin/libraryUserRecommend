@@ -5,6 +5,12 @@ public class User {
     String id; //아이디
     String likeBookCode;//특징
 
+    public User(int seedid, String id, String likeBookCode){
+        this.seedid=seedid;
+        this.id=id;
+        this.likeBookCode=likeBookCode;
+    }
+
     public int getSeedid() {
         return seedid;
     }

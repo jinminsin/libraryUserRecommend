@@ -58,7 +58,7 @@ public class CommunityListFragment extends Fragment {
                     community_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            MainActivity.fManager.goPostFragment(position+1,R.id.yeah, CommunityListFragment.this);
+                            MainActivity.fManager.goPostFragment(position+1,R.id.contentFragment, CommunityListFragment.this);
                         }
                     });
                 } catch (JSONException e) {

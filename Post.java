@@ -9,7 +9,7 @@ class Post {
     private String createDate;
     private String password;
 
-    Post(int cid, String title, String subtitle, String owner, String createDate, String password){
+    public Post(int cid, String title, String subtitle, String owner, String createDate, String password){
         this.cid = cid;
         this.title = title;
         this.subtitle = subtitle;
@@ -18,7 +18,7 @@ class Post {
         this.password = password;
     }
 
-    Post(int cid, int id, String title, String subtitle, String owner, String createDate, String password){
+    public Post(int cid, int id, String title, String subtitle, String owner, String createDate, String password){
         this.cid = cid;
         this.id = id;
         this.title = title;
