@@ -13,8 +13,6 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
         android:paddingLeft="10dp"
         android:text="Community 관리자 "
         android:layout_below="@+id/c_name"
@@ -35,8 +33,6 @@
     <TextView
         android:layout_alignBaseline="@+id/c_detail"
         android:layout_alignBottom="@+id/c_detail"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
         android:layout_toEndOf="@+id/c_detail"
         android:layout_toRightOf="@+id/c_detail"
         android:paddingBottom="10dp"
