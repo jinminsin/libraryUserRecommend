@@ -1,31 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_gravity="">
+    tools:context=".MainActivity">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        app:tabIndicatorColor="#000000"
-        app:tabRippleColor="#45ADFD">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab_Item1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home" />
+            android:text="Tab1" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab_Item2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="커뮤니티" />
+            android:text="Tab2" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tab_Item3"
@@ -37,20 +34,14 @@
             android:id="@+id/tab_Item4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings" />
+            android:text="Tab4" />
 
     </com.google.android.material.tabs.TabLayout>
 
-    <FrameLayout
+    <LinearLayout
+        android:id="@+id/yeah"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:id="@+id/yeah"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-
-    </FrameLayout>
+        android:layout_height="wrap_content"></LinearLayout>
 
 </LinearLayout>

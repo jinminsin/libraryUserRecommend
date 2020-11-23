@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:background="@drawable/imeui"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -17,6 +18,7 @@
         android:paddingRight="20dp"/>
 
     <EditText
+        android:textColor="#000"
         android:inputType="textEmailAddress"
         android:id="@+id/ID"
         android:layout_width="fill_parent"
@@ -25,6 +27,7 @@
         android:hint="ID"
         />
     <EditText
+        android:textColor="#000"
         android:inputType="textPassword"
         android:id="@+id/PW"
         android:layout_marginBottom="10dp"
@@ -33,12 +36,17 @@
         android:layout_height="wrap_content"
         />
     <Button
+        android:background="@drawable/border_layout"
+        android:textColor="#F00"
         android:id="@+id/loginbtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="LOGIN" />
+
     <Button
+        android:background="@drawable/border_layout"
+        android:textColor="#F00"
         android:id="@+id/signupbtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

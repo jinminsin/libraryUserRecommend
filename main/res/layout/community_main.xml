@@ -5,26 +5,20 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/border_layout">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/list"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_height="match_parent">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:textSize="20dp"
                 android:layout_gravity="center_horizontal"
                 android:text="커뮤니티"
-                android:textColor="#FF9800"
-                android:textSize="20dp" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
             <ListView
                 android:id="@+id/Community_ListView"

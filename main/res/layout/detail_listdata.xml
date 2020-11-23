@@ -1,37 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
+        android:layout_below="@id/d_subtitle"
         android:text=" 아이디 "
         android:id="@+id/d_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:paddingLeft="10dp"
+        android:layout_toRightOf="@+id/d_id"
+        android:layout_below="@id/d_subtitle"
         android:text="댓글 작성자 "
         android:id="@+id/d_owner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:paddingLeft="10dp"
+        android:layout_toRightOf="@id/d_owner"
+        android:layout_below="@id/d_subtitle"
         android:text="댓글 생성일 "
         android:id="@+id/d_createDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:text="댓글 비밀번호 "
-        android:id="@+id/d_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
+        android:textSize="20dp"
         android:text="댓글 내용 "
         android:id="@+id/d_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-</LinearLayout>
+</RelativeLayout>
