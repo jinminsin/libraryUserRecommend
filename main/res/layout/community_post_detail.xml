@@ -1,28 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent">
 
     <TextView
+        android:textSize="20dp"
         android:id="@+id/pd_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="제목" />
 
     <TextView
+
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/pd_createDate"
+        android:textSize="20dp"
         android:id="@+id/pd_owner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="관리자" />
 
     <TextView
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/pd_subtitle"
+        android:textSize="20dp"
         android:id="@+id/pd_createDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="생성일" />
 
     <TextView
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/pd_title"
+        android:textSize="20dp"
         android:id="@+id/pd_subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,8 +42,10 @@
 
     <!-- 여기서부턴 댓글 !-->
     <TextView
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/pd_owner"
         android:text="댓글"
-        android:textSize="20dp"
+        android:textSize="25dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -43,4 +56,4 @@
         android:layout_height="match_parent"
         android:orientation="vertical"></LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
