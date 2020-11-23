@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ResultProcessing"
+    android:gravity="center">
+
+    <TextView
+        android:textColor="#000"
+        android:layout_marginLeft="90dp"
+        android:id="@+id/resultTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="20dp"
+        tools:layout_editor_absoluteX="171dp"
+        tools:layout_editor_absoluteY="250dp" />
+
+    <ImageView
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/resultTextview"
+        android:background="@drawable/complete"
+        android:id="@+id/result_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="85dp"
+        android:id="@+id/okBtn"
+        android:background="@drawable/border_radius"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/result_image"
+        android:text="확인"
+        tools:layout_editor_absoluteX="159dp"
+        tools:layout_editor_absoluteY="369dp" />
+
+</RelativeLayout>
