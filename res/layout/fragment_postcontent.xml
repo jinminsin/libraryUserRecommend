@@ -5,32 +5,38 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:textSize="15dp"
         android:id="@+id/pd_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <TextView
+        android:layout_marginTop="5dp"
+        android:textSize="10dp"
         android:id="@+id/pd_owner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <TextView
+        android:textSize="10dp"
         android:id="@+id/pd_createDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <TextView
+        android:textSize="10dp"
         android:id="@+id/pd_subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <TextView
+        android:layout_marginTop="10dp"
+        android:textSize="25dp"
         android:text="댓글"
-        android:textSize="20dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

@@ -9,6 +9,8 @@
     android:gravity="center">
 
     <TextView
+        android:textColor="#000"
+        android:textSize="20dp"
         android:id="@+id/resultTextview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,7 +18,16 @@
         tools:layout_editor_absoluteX="171dp"
         tools:layout_editor_absoluteY="250dp" />
 
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:background="@drawable/complete1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <Button
+        android:textColor="#FFF"
+        android:background="@drawable/border_radius2"
+        android:layout_marginTop="15dp"
         android:id="@+id/okBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

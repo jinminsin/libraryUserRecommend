@@ -9,6 +9,8 @@
     android:gravity="center">
 
     <TextView
+        android:textSize="20dp"
+        android:textColor="#000"
         android:id="@+id/quest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,6 +19,9 @@
         tools:layout_editor_absoluteY="250dp" />
 
     <Button
+        android:layout_marginTop="15dp"
+        android:textColor="#FFF"
+        android:background="@drawable/border_radius"
         android:id="@+id/tBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,6 +30,9 @@
         tools:layout_editor_absoluteY="369dp" />
 
     <Button
+        android:layout_marginTop="15dp"
+        android:textColor="#FFF"
+        android:background="@drawable/border_radius"
         android:id="@+id/fBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
