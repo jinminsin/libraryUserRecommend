@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/bookimg"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"/>
+
+    <EditText
+        android:textColor="#000"
+        android:inputType="textEmailAddress"
+        android:id="@+id/ID"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="ID"
+        />
+    <EditText
+        android:textColor="#000"
+        android:inputType="textPassword"
+        android:id="@+id/PW"
+        android:layout_marginBottom="10dp"
+        android:hint="PASSWORD"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:background="@drawable/border_layout"
+        android:textColor="#F00"
+        android:id="@+id/signInBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="LOGIN" />
+
+    <Button
+        android:background="@drawable/border_layout"
+        android:textColor="#F00"
+        android:id="@+id/signUpBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="회원가입" />
+
+</LinearLayout>
