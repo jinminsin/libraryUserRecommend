@@ -1,35 +1,42 @@
 package com.slave_mk14.libraryuserrecommendation;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.Button;
 import android.widget.TextView;
+import com.google.android.material.tabs.TabLayout;
+import java.util.ArrayList;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
-    TextView a;
+    static FragmentHelper fManager = new FragmentHelper();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RequestQueue q = Volley.newRequestQueue(this);
+        TabLayout tab = findViewById(R.id.tab);
 
-        Response.Listener<String> responseListener = new Response.Listener<String>() {
+        ArrayList<Integer> images = new ArrayList<>();
+        images.add(R.drawable.ic_launcher_foreground);
+        images.add(R.drawable.ic_launcher_foreground);
+        images.add(R.drawable.ic_launcher_foreground);
+        images.add(R.drawable.ic_launcher_foreground);
+
+        for(int index = 0; index < 4; index++)
+            tab.getTabAt(index).setIcon(images.get(index));
+
+        tab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public void onResponse(String response) {
-                Log.e("Result","["+response+"]");
-                           }
-        };
-
-        DBResponse.searchCommunityResponse(q, responseListener);
+            public void onTabSelected(TabLayout.Tab tab) {
+                //do stuff here
+                fManager.moveFragment(tab.getPosition(), R.id.yeah,MainActivity.this);
+            }
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {}
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {}
+        });
     }
 }

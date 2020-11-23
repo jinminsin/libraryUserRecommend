@@ -4,20 +4,21 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
+//Help Class for fragment into Application
 public class FragmentHelper {
     private Fragment mainFragment;
     private Fragment testFragment;
+    private Fragment testResultFragment;
     private Fragment communityFragment;
     private Fragment postFragment;
     private Fragment postContentFragment;
     private Fragment settingFragment;
 
     public FragmentHelper(){
-       mainFragment = new Community_Tab();
-       testFragment = new Community_Tab();
-       communityFragment = new Community_Tab();
-       settingFragment = new Community_Tab();
+        mainFragment = new CommunityListFragment();
+        testFragment = new TestFragment();
+        communityFragment = new CommunityListFragment();
+        settingFragment = new SettingFragment();
     }
 
     public void moveFragment(int index, int viewId, AppCompatActivity activity){
@@ -43,15 +44,20 @@ public class FragmentHelper {
         }
     }
 
+    public void goTestResultFragment(int viewId, String index, Fragment fragment){
+        testResultFragment = new TestResultFragment(index);
+        fragment.getFragmentManager().beginTransaction().replace(viewId, testResultFragment).commit();
+    }
+
     public void goPostFragment(int cid, int viewId, Fragment fragment)
     {
-        postFragment = new Post_Tab(cid);
+        postFragment = new PostListFragment(cid);
         fragment.getFragmentManager().beginTransaction().replace(viewId, postFragment).commit();
     }
 
-    public void goPostContentFragment(Post_Item p, int viewId, Fragment fragment)
+    public void goPostContentFragment(Post p, int viewId, Fragment fragment)
     {
-        postContentFragment = new Post_Detail_Tab(p);
+        postContentFragment = new PostContentFragment(p);
         fragment.getFragmentManager().beginTransaction().replace(viewId, postContentFragment).commit();
     }
 
