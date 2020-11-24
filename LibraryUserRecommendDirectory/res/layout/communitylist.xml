@@ -4,6 +4,8 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:textColor="#000"
+        android:fontFamily="@font/nanumbarungothic"
         android:padding="10dp"
         android:textSize="25dp"
         android:layout_centerHorizontal="true"
@@ -13,6 +15,8 @@
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:textColor="#000"
+        android:fontFamily="@font/nanumbarungothic"
         android:paddingLeft="10dp"
         android:text="TextView"
         android:layout_below="@+id/c_name"
@@ -21,6 +25,8 @@
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:textColor="#000"
+        android:fontFamily="@font/nanumbarungothic"
         android:layout_alignBaseline="@+id/c_owner"
         android:layout_alignBottom="@+id/c_owner"
         android:layout_centerHorizontal="true"
@@ -31,6 +37,8 @@
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:textColor="#000"
+        android:fontFamily="@font/nanumbarungothic"
         android:layout_alignBaseline="@+id/c_detail"
         android:layout_alignBottom="@+id/c_detail"
         android:layout_toEndOf="@+id/c_detail"

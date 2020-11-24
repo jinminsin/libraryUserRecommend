@@ -5,6 +5,7 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:textColor="#000"
         android:textSize="15dp"
         android:id="@+id/pd_title"
         android:layout_width="match_parent"
@@ -12,6 +13,8 @@
         android:text="TextView" />
 
     <TextView
+        android:textColor="#000"
+        android:fontFamily="@font/nanumbarungothic"
         android:layout_marginTop="5dp"
         android:textSize="10dp"
         android:id="@+id/pd_owner"
@@ -20,6 +23,8 @@
         android:text="TextView" />
 
     <TextView
+        android:textColor="#000"
+        android:fontFamily="@font/nanumbarungothic"
         android:textSize="10dp"
         android:id="@+id/pd_createDate"
         android:layout_width="match_parent"
@@ -27,6 +32,8 @@
         android:text="TextView" />
 
     <TextView
+        android:textColor="#000"
+        android:fontFamily="@font/nanumbarungothic"
         android:textSize="10dp"
         android:id="@+id/pd_subtitle"
         android:layout_width="match_parent"
@@ -34,6 +41,8 @@
         android:text="TextView" />
 
     <TextView
+        android:textColor="#000"
+        android:fontFamily="@font/nanumbarungothic"
         android:layout_marginTop="10dp"
         android:textSize="25dp"
         android:text="댓글"

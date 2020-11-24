@@ -2,42 +2,46 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".TestFragment"
     android:gravity="center">
 
+
     <TextView
-        android:textSize="20dp"
-        android:textColor="#000"
+        android:layout_marginTop="150dp"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/nanumpen"
+        android:textSize="30dp"
+        android:textColor="#FF0D00"
         android:id="@+id/quest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="171dp"
-        tools:layout_editor_absoluteY="250dp" />
+        android:text="TextView" />
 
     <Button
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/nanumbarungothic"
         android:layout_marginTop="15dp"
         android:textColor="#FFF"
         android:background="@drawable/border_radius"
         android:id="@+id/tBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="True"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="369dp" />
+        android:text="True" />
 
     <Button
+
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/nanumbarungothic"
         android:layout_marginTop="15dp"
         android:textColor="#FFF"
         android:background="@drawable/border_radius"
         android:id="@+id/fBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="False"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="517dp" />
+        android:text="False" />
 
 </LinearLayout>

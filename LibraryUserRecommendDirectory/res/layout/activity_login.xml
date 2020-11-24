@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@drawable/bookimg"
+    android:background="@drawable/welcome_img"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -18,7 +18,8 @@
         android:paddingRight="20dp"/>
 
     <EditText
-        android:textColor="#000"
+        android:fontFamily="@font/nanumbarungothic"
+        android:textColor="#FFF"
         android:inputType="textEmailAddress"
         android:id="@+id/ID"
         android:layout_width="fill_parent"
@@ -27,7 +28,8 @@
         android:hint="ID"
         />
     <EditText
-        android:textColor="#000"
+        android:fontFamily="@font/nanumbarungothic"
+        android:textColor="#FFF"
         android:inputType="textPassword"
         android:id="@+id/PW"
         android:layout_marginBottom="10dp"
@@ -37,21 +39,27 @@
         />
 
     <Button
-        android:background="@drawable/border_layout"
-        android:textColor="#F00"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp"
+        android:fontFamily="@font/nanumbarungothicbold"
+        android:background="@drawable/border_radius3"
+        android:textColor="#FFF"
         android:id="@+id/signInBtn"
-        android:layout_width="fill_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:text="LOGIN" />
 
     <Button
-        android:background="@drawable/border_layout"
-        android:textColor="#F00"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp"
+        android:fontFamily="@font/nanumbarungothicbold"
+        android:background="@drawable/border_radius3"
+        android:textColor="#FFF"
         android:id="@+id/signUpBtn"
-        android:layout_width="fill_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="회원가입" />
 
 </LinearLayout>

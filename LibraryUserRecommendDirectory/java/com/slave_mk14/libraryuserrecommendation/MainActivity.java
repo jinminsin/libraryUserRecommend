@@ -26,10 +26,10 @@ public class MainActivity extends AppCompatActivity {
         fManager.initialFragment(this);
 
         ArrayList<Integer> images = new ArrayList<>();
-        images.add(R.drawable.ic_launcher_foreground);
-        images.add(R.drawable.ic_launcher_foreground);
-        images.add(R.drawable.ic_launcher_foreground);
-        images.add(R.drawable.ic_launcher_foreground);
+        images.add(R.drawable.home);
+        images.add(R.drawable.search);
+        images.add(R.drawable.bell);
+        images.add(R.drawable.setting);
 
         for(int index = 0; index < 4; index++)
             tab.getTabAt(index).setIcon(images.get(index));
