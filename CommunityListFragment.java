@@ -24,21 +24,17 @@ import java.util.ArrayList;
 
 public class CommunityListFragment extends Fragment {
 
-    ArrayList<Community> community_items; // 생성자 생성
-    ListView community_listView;
-    private static AdapterCommunity Community_Adapter;
-
-
-    //커뮤니티 목록 띄우는곳
-
+    private ArrayList<Community> list;
+    private ListView listView;
+    private AdapterCommunity adapter;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_communitylist,container,false); //view 띄움
-        community_listView = (ListView)rootView.findViewById(R.id.Community_ListView);
-        community_items = new ArrayList<>();
+        listView = (ListView)rootView.findViewById(R.id.Community_ListView);
+        list = new ArrayList<>();
 
-        final Response.Listener<String> responseListener = new Response.Listener<String>() {
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -48,14 +44,12 @@ public class CommunityListFragment extends Fragment {
                     for(int i=0;i<jsonObject.length();i++){
                         JSONObject obj = jsonArray.getJSONObject(i);
                         Community item = new Community(obj.getString("name"),obj.getString("detail"),obj.getString("owner"),obj.getString("createDate"));
-                        community_items.add(item);
-                        Log.e("확인확인",""+item.getName());
+                        list.add(item);
                     }
 
-                    Community_Adapter = new AdapterCommunity(getContext(), community_items);
-                    community_listView.setAdapter(Community_Adapter);
-
-                    community_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    adapter = new AdapterCommunity(getContext(), list);
+                    listView.setAdapter(adapter);
+                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             MainActivity.fManager.goPostFragment(position+1,R.id.contentFragment, CommunityListFragment.this);

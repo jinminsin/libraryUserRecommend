@@ -13,19 +13,22 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class TestFragment extends Fragment {
-    TextView quest;//질의
-    Button tBtn,fBtn;//버튼
-    String question = "";
-    String upBtnText = "";
-    String downBtnText = "";
+    private TextView quest;//질의
+    private Button tBtn,fBtn;//버튼
+    private String question = "";
+    private String upBtnText = "";
+    private String downBtnText = "";
     //질의문
 
-    String flag = "";
-    View.OnClickListener tBtnClick,fBtnClick;
+    private String flag = "";
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        if(!MainActivity.mUser.getLikeBookCode().equals("-1"))
+        {
+            MainActivity.fManager.goTestResultFragment(R.id.contentFragment,"C",TestFragment.this);
+        }
 
         View view = inflater.inflate(R.layout.fragment_test, container, false);
 

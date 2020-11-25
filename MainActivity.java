@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     static FragmentHelper fManager = new FragmentHelper();
     static User mUser = null;
+    static TabLayout tab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +23,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(this, LogInActivity.class));
         }
 
-        TabLayout tab = findViewById(R.id.tab);
+        tab = findViewById(R.id.tab);
         fManager.initialFragment(this);
 
         ArrayList<Integer> images = new ArrayList<>();
-        images.add(R.drawable.ic_launcher_foreground);
-        images.add(R.drawable.ic_launcher_foreground);
-        images.add(R.drawable.ic_launcher_foreground);
-        images.add(R.drawable.ic_launcher_foreground);
+        images.add(R.drawable.home);
+        images.add(R.drawable.search);
+        images.add(R.drawable.bell);
+        images.add(R.drawable.setting);
 
         for(int index = 0; index < 4; index++)
             tab.getTabAt(index).setIcon(images.get(index));
@@ -37,13 +38,14 @@ public class MainActivity extends AppCompatActivity {
         tab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                //do stuff here
                 fManager.moveFragment(tab.getPosition(), R.id.contentFragment,MainActivity.this);
             }
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {}
             @Override
-            public void onTabReselected(TabLayout.Tab tab) {}
+            public void onTabReselected(TabLayout.Tab tab) {
+                fManager.moveFragment(tab.getPosition(), R.id.contentFragment,MainActivity.this);
+            }
         });
     }
 }

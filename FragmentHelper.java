@@ -32,13 +32,23 @@ public class FragmentHelper {
                 Log.e("메인메인","프래그먼트 생성했어요");
                 break;
             case 1:
-                activity.getSupportFragmentManager().beginTransaction().replace(viewId, testFragment).commit();
+                if(testResultFragment != null) activity.getSupportFragmentManager().beginTransaction().replace(viewId, testResultFragment).commit();
+                else activity.getSupportFragmentManager().beginTransaction().replace(viewId, testFragment).commit();
                 Log.e("테스테스","프래그먼트 생성했어요");
                 break;
             case 2:
-                if(postContentFragment != null && !postContentFragment.isDetached()) activity.getSupportFragmentManager().beginTransaction().replace(viewId, postContentFragment).commit();
-                else if(postFragment != null && !postFragment.isDetached()) activity.getSupportFragmentManager().beginTransaction().replace(viewId, postFragment).commit();
-                else activity.getSupportFragmentManager().beginTransaction().replace(viewId, communityFragment).commit();
+                if(postContentFragment != null) {
+                    activity.getSupportFragmentManager().beginTransaction().remove(postContentFragment).commit();
+                    postContentFragment = null;
+                    activity.getSupportFragmentManager().beginTransaction().remove(postFragment).commit();
+                    postFragment = null;
+                }
+                else if(postFragment != null) {
+                    activity.getSupportFragmentManager().beginTransaction().remove(postFragment).commit();
+                    postFragment = null;
+                }
+
+                activity.getSupportFragmentManager().beginTransaction().replace(viewId, communityFragment).commit();
                 Log.e("커뮤커뮤","프래그먼트 생성했어요");
                 break;
             case 3:
@@ -65,15 +75,16 @@ public class FragmentHelper {
         fragment.getFragmentManager().beginTransaction().replace(viewId, postContentFragment).commit();
     }
 
-    public void endPostFragment(int viewId, AppCompatActivity activity)
+    public void endPostContentFragment(int viewId, Fragment fragment)
     {
-        postFragment.onDestroy();
-        activity.getSupportFragmentManager().beginTransaction().replace(viewId, communityFragment).commit();
+        fragment.getFragmentManager().beginTransaction().remove(postContentFragment).commit();
+        postContentFragment = null;
+        fragment.getFragmentManager().beginTransaction().replace(viewId, postFragment).commit();
     }
 
-    public void endPostContentFragment(int viewId, AppCompatActivity activity)
-    {
-        postContentFragment.onDestroy();
-        activity.getSupportFragmentManager().beginTransaction().replace(viewId, postFragment).commit();
+    public void endTestResultFragment(Fragment fragment){
+        fragment.getFragmentManager().beginTransaction().remove(testResultFragment).commit();
+        testResultFragment = new TestResultFragment("C");
+        MainActivity.tab.getTabAt(0).select();
     }
 }
