@@ -23,5 +23,5 @@ print(data_sample.head(10))
 # print(split_df[1].head(10))
 
 save_name = '\\파싱된 도서관 책 보유장서 DB.csv'
-# 저장
+# 저장 (공공데이터는 대부분 euc-kr로 인코딩. utf-8로 인코딩하면 한글이 깨진다.)
 data_sample.to_csv(dir_path + save_name, sep=',', encoding='euc-kr')
