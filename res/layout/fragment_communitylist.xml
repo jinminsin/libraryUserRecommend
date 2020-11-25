@@ -15,15 +15,23 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:fontFamily="@font/nanumbarungothic"
                 android:textColor="#000"
-                android:background="@drawable/border_layout_outline"
-                android:textSize="20dp"
+                android:textSize="30dp"
                 android:layout_gravity="center_horizontal"
                 android:text="커뮤니티"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
+            <View
+                android:background="@drawable/gradient"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"/>
+
             <ListView
+                android:divider="@drawable/gradient"
+                android:dividerHeight="3dp"
+                android:fontFamily="@font/nanumbarungothic"
                 android:id="@+id/Community_ListView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>

@@ -1,38 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:textSize="10dp"
-        android:text="TextView"
-        android:id="@+id/d_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
 
     <TextView
-        android:layout_toRightOf="@id/d_id"
+        android:textColor="#000"
         android:textSize="10dp"
         android:text="TextView"
         android:id="@+id/d_owner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+
     <TextView
-        android:layout_toRightOf="@+id/d_owner"
+        android:layout_below="@id/d_owner"
+        android:textColor="#000"
+        android:text="TextView"
+        android:textSize="15dp"
+        android:id="@+id/d_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_below="@id/d_subtitle"
+        android:textColor="#000"
         android:textSize="10dp"
         android:text="TextView"
         android:id="@+id/d_createDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+
     <TextView
-        android:layout_marginTop="10dp"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:layout_below="@id/d_subtitle"
+        android:layout_toRightOf="@id/d_createDate"
+        android:textColor="#000"
+        android:textSize="10dp"
         android:text="TextView"
-        android:textSize="20dp"
-        android:id="@+id/d_subtitle"
+        android:id="@+id/d_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+
+
+
 
 </RelativeLayout>
