@@ -5,14 +5,17 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:paddingLeft="5dp"
+        android:layout_marginTop="10dp"
         android:textColor="#000"
-        android:textSize="25dp"
+        android:textSize="16dp"
         android:id="@+id/pd_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
     <TextView
+        android:paddingLeft="5dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_below="@id/pd_title"
@@ -25,6 +28,7 @@
         android:text="TextView" />
 
     <TextView
+        android:paddingLeft="15dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:layout_toRightOf="@id/pd_owner"
@@ -38,11 +42,12 @@
         android:text="TextView" />
 
     <TextView
+        android:paddingLeft="5dp"
         android:layout_marginBottom="10dp"
         android:layout_below="@id/pd_createDate"
         android:textColor="#000"
         android:fontFamily="@font/nanumbarungothic"
-        android:textSize="25dp"
+        android:textSize="18dp"
         android:id="@+id/pd_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -85,12 +90,14 @@
     </LinearLayout>
 
     <Button
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/yeahhh"
-        android:background="@drawable/border_backbtn"
-        android:text="BACK FOR CLICK"
         android:id="@+id/bBtn"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"/>
+        android:layout_height="100dp"
+        android:layout_below="@+id/yeahhh"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/border_backbtn"
+        android:text="BACK FOR CLICK" />
 
 </RelativeLayout>

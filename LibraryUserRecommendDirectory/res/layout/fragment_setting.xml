@@ -1,8 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:id="@+id/setting"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/pfimg_layout"
+        android:background="@drawable/border_setting"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:layout_width="350dp"
+        android:layout_height="150dp">
+
+
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/pf_image"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:background="@drawable/setting_profile" />
+
+        <ImageView
+            android:layout_marginTop="30dp"
+            android:layout_width="170dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/pf_image"
+            android:background="@drawable/profile_text"
+            android:paddingLeft="10dp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_alignBaseline="@id/pfimg_layout"
+        android:textColor="#000"
+        android:fontFamily="@font/nanumbarungothicbold"
+        android:background="@drawable/border_backbtn"
+        android:textSize="15dp"
+        android:text="이 버튼을 누를시 초기화됩니다"
+        android:id="@+id/reBtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/pfimg_layout"
+        android:layout_width="250dp"
+        android:layout_height="80dp"/>
+
+
+    <RelativeLayout
+        android:background="@drawable/border_setting"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:layout_below="@id/pfimg_layout"
+        android:layout_width="350dp"
+        android:layout_marginBottom="20dp"
+        android:layout_height="400dp">
+
+        <TextView
+            android:textColor="#000"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:paddingTop="30dp"
+            android:paddingLeft="10dp"
+            android:text="TextView"
+            android:id="@+id/s_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_centerVertical="true"
+            android:textColor="#000"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:layout_below="@+id/s_id"
+            android:paddingTop="30dp"
+            android:paddingLeft="10dp"
+            android:text="TextView"
+            android:id="@+id/s_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textColor="#000"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:layout_below="@+id/s_name"
+            android:paddingTop="30dp"
+            android:paddingLeft="10dp"
+            android:text="TextView"
+            android:id="@+id/s_createDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

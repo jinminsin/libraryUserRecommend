@@ -5,6 +5,8 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:layout_marginTop="5dp"
+        android:paddingLeft="5dp"
         android:id="@+id/pm_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,6 +16,7 @@
         android:textSize="10dp" />
 
     <TextView
+        android:layout_marginTop="5dp"
         android:paddingLeft="5dp"
         android:textSize="10dp"
         android:layout_toRightOf="@id/pm_title"
@@ -25,6 +28,7 @@
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:layout_marginTop="5dp"
         android:paddingLeft="5dp"
         android:textSize="10dp"
         android:layout_toRightOf="@id/pm_sub"
@@ -36,6 +40,8 @@
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:layout_marginTop="5dp"
+        android:paddingLeft="5dp"
         android:textSize="10dp"
         android:layout_below="@id/pm_sub"
         android:textColor="#000"
@@ -46,6 +52,7 @@
         android:layout_height="wrap_content"/>
 
     <TextView
+        android:layout_marginTop="5dp"
         android:paddingLeft="5dp"
         android:layout_below="@id/pm_sub"
         android:textSize="10dp"
@@ -59,7 +66,7 @@
 
 
     <View
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="4dp"
         android:id="@+id/line1"
         android:layout_below="@id/pm_password"
         android:background="@drawable/gradient"
@@ -68,6 +75,7 @@
 
 
     <TextView
+        android:layout_marginTop="5dp"
         android:layout_below="@id/line1"
         android:id="@+id/korean_title"
         android:layout_width="match_parent"
@@ -79,7 +87,7 @@
 
 
     <View
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="4dp"
         android:id="@+id/line2"
         android:layout_below="@id/korean_title"
         android:background="@drawable/gradient"
@@ -88,7 +96,7 @@
 
 
     <TextView
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/korean_subjec"
         android:layout_width="match_parent"
         android:layout_height="450dp"

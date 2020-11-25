@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <ListView
-                android:textColor="#000"
-                android:divider="@drawable/gradient"
-                android:dividerHeight="3dp"
-                android:fontFamily="@font/nanumbarungothic"
+                android:layout_gravity="center_horizontal"
                 android:id="@+id/Comment_ListView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:listSelector="@android:color/transparent"/>
+                android:divider="@drawable/gradient"
+                android:dividerHeight="1dp"
+                android:fontFamily="@font/nanumbarungothic"
+                android:listSelector="@android:color/transparent"
+                android:textColor="#000">
+            </ListView>
+
+            <View
+                android:layout_marginTop="5dp"
+                android:id="@+id/com_line"
+                android:background="@drawable/gradient"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <EditText
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/comment_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="댓글을 입력하세요" />
 
         </LinearLayout>
-
-    </FrameLayout>
 
 </RelativeLayout>

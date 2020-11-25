@@ -8,6 +8,7 @@
 
 
     <TextView
+        android:layout_marginTop="10dp"
         android:textColor="#000"
         android:textSize="10dp"
         android:text="TextView"
@@ -36,7 +37,6 @@
 
 
     <TextView
-        android:inputType="textPassword"
         android:paddingLeft="10dp"
         android:layout_below="@id/d_subtitle"
         android:layout_toRightOf="@id/d_createDate"

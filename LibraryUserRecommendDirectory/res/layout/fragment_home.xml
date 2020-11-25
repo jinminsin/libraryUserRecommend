@@ -37,7 +37,7 @@
         <ListView
             android:textColor="#000"
             android:fontFamily="@font/nanumbarungothic"
-            android:dividerHeight="3dp"
+            android:dividerHeight="1dp"
             android:divider="@drawable/gradient"
             android:id="@+id/homelist"
             android:layout_width="match_parent"

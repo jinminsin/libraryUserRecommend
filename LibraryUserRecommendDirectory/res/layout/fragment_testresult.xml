@@ -2,22 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_gravity="center_horizontal"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_gravity="center"
+    android:layout_centerVertical="true"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".TestResultFragment"
     android:gravity="center">
 
     <TextView
-        android:gravity="center_horizontal"
-        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:layout_marginTop="100dp"
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/nanumpen"
         android:textColor="#DA4A47"
-        android:textSize="50dp"
+        android:textSize="30dp"
         android:id="@+id/resultTextview"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="TextView" />
 
@@ -29,7 +30,7 @@
         android:background="@drawable/complete" />
 
     <Button
-        android:layout_gravity="center_horizontal"
+        android:gravity="center"
         android:textColor="#FFF"
         android:background="@drawable/border_result"
         android:layout_marginTop="15dp"

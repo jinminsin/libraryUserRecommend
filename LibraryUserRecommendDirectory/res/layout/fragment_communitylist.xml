@@ -30,7 +30,7 @@
 
             <ListView
                 android:divider="@drawable/gradient"
-                android:dividerHeight="3dp"
+                android:dividerHeight="1dp"
                 android:fontFamily="@font/nanumbarungothic"
                 android:id="@+id/Community_ListView"
                 android:layout_width="match_parent"
