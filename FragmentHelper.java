@@ -28,6 +28,8 @@ public class FragmentHelper {
     public void moveFragment(int index, int viewId, AppCompatActivity activity){
         switch(index){
             case 0:
+                activity.getSupportFragmentManager().beginTransaction().remove(mainFragment).commit();
+                mainFragment = new HomeFragment();
                 activity.getSupportFragmentManager().beginTransaction().replace(viewId, mainFragment).commit();
                 Log.e("메인메인","프래그먼트 생성했어요");
                 break;
@@ -47,7 +49,8 @@ public class FragmentHelper {
                     activity.getSupportFragmentManager().beginTransaction().remove(postFragment).commit();
                     postFragment = null;
                 }
-
+                activity.getSupportFragmentManager().beginTransaction().remove(communityFragment).commit();
+                communityFragment = new CommunityListFragment();
                 activity.getSupportFragmentManager().beginTransaction().replace(viewId, communityFragment).commit();
                 Log.e("커뮤커뮤","프래그먼트 생성했어요");
                 break;

@@ -32,7 +32,7 @@ public class HomeFragment extends Fragment {
     private Response.Listener<String> firstLikeBookListener, secondLikeBookListener;
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home,container,false); //view 띄움
         listView = (ListView)rootView.findViewById(R.id.likeBookListView);
         list = new ArrayList<>();
@@ -77,7 +77,7 @@ public class HomeFragment extends Fragment {
                     }
                     LikeBook item = new LikeBook("당신의 투픽! "+DataHashmap.BookCodetoBookHash.get(MainActivity.mUser.getSiblingLikeBookCode()),booklist);
                     list.add(item);
-                    adapter = new AdapterLikeBook(getContext(),list);
+                    adapter = new AdapterLikeBook(container.getContext(),list);
                     listView.setAdapter(adapter);
                 } catch (JSONException e) {
                     e.printStackTrace();
