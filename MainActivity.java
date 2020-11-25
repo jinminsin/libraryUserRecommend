@@ -1,5 +1,6 @@
 package com.slave_mk14.libraryuserrecommendation;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,7 +11,7 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-    static FragmentHelper fManager = new FragmentHelper();
+    static FragmentHelper fManager;
     static User mUser = null;
     static TabLayout tab;
 
@@ -19,11 +20,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(mUser == null){
-            startActivity(new Intent(this, LogInActivity.class));
-        }
+        startActivityForResult(new Intent(this, LogInActivity.class), 0);
+    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        setMainView();
+    }
+
+    public void setMainView(){
         tab = findViewById(R.id.tab);
+
+        fManager = new FragmentHelper();
         fManager.initialFragment(this);
 
         ArrayList<Integer> images = new ArrayList<>();

@@ -1,7 +1,6 @@
 package com.slave_mk14.libraryuserrecommendation;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +21,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-//게시글이 나오는곳
 
 public class PostListFragment extends Fragment {
     private ArrayList<Post> list;

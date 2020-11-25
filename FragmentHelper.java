@@ -4,7 +4,7 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-//Help Class for fragment into Application
+
 public class FragmentHelper {
     private Fragment mainFragment;
     private Fragment testFragment;

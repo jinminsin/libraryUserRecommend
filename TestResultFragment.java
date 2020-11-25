@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -16,10 +15,6 @@ import androidx.fragment.app.Fragment;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class TestResultFragment extends Fragment {
     private TextView resultTextview;
@@ -68,8 +63,8 @@ public class TestResultFragment extends Fragment {
                     break;
             }
         }else {
-            resultData = QuestionHashmap.questionHash.get(index)[0];
-            resultBookCode = QuestionHashmap.questionHash.get(index)[1];
+            resultData = DataHashmap.questionHash.get(index)[0];
+            resultBookCode = DataHashmap.questionHash.get(index)[1];
             switch(resultBookCode){
                 case "0":
                     siblingResultBookCode = "8";
