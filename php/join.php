@@ -12,9 +12,10 @@ $num=mysqli_num_rows($result);
 if ($num > 0) {
 echo "0";
 } else {
-   $query = "INSERT INTO USERS(_id, pw, authority, type) VALUES('$id', '$pw', 0, -1)";
+   $query = "INSERT INTO USER(_id, pw, authority, likebookcode, siblinglikebookcode) VALUES('$id', '$pw', 0, -1, -1)";
    $result = mysqli_query($conn, $query);
-   if(!$result)   
+
+   if($result)   
        echo "1";
    else
        echo "-1";

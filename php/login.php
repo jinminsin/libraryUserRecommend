@@ -8,17 +8,20 @@
 
 $query = "SELECT * FROM user where _id ='$id' and pw='$pw'";
 $result = mysqli_query($conn, $query);
-
+if(!$result)
+ echo json_encode(array('success' => "-1"), JSON_UNESCAPED_UNICODE);
+else{
 if(mysqli_num_rows($result)>0){
 $res = array();
 while($row = mysqli_fetch_array($result)){  
-      array_push($res, array('seedid' =>$row[0], 'id'=>$row[1], 'pw'=>$row[2], 'authority'=>$row[3], 'type'=>$row[4]));  
+      array_push($res, array('seedid' =>$row[0], 'id'=>$row[1], 'pw'=>$row[2], 'authority'=>$row[3], 'likebookcode'=>$row[4], 'siblinglikebookcode'=>$row[5]));  
     }  
 
     echo json_encode(array('success' => "1", 'result' => $res), JSON_UNESCAPED_UNICODE);  
 } else
 {
-    echo json_encode(array('success' => "-1"), JSON_UNESCAPED_UNICODE);
+    echo json_encode(array('success' => "0"), JSON_UNESCAPED_UNICODE);
+}
 }
     mysqli_close($conn);
 ?>

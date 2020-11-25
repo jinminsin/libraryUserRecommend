@@ -12,7 +12,7 @@
 
    $query = "INSERT INTO post(cid, title, subtitle, owner, createDate, password) VALUES($cid, $title, $subtitle, $owner, $createDate, $password)";
    $result = mysqli_query($conn, $query);
-   if(!$result)   
+   if($result)   
        echo "1";
    else
        echo "-1";

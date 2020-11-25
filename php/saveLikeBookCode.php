@@ -3,13 +3,12 @@
     $conn = mysqli_connect("127.0.0.1","root","root","library");
     mysqli_set_charset($conn,"utf8");
 
-   $pid = (int)$_POST['pid'];
-   $subtitle = $_POST['subtitle'];
-   $owner = $_POST['owner'];
-   $createDate = $_POST['createDate'];
-   $password = $_POST['password'];
+   $seedid = (int)$_POST['seedid'];
+   $likebookcode = $_POST['likebookcode'];
+   $siblinglikebookcode = $_POST['siblinglikebookcode'];
 
-   $query = "INSERT INTO comment(pid, subtitle, owner, createDate, password) VALUES($pid, $subtitle, $owner, $createDate, $password)";
+
+   $query = "update user set likebookcode = '$likebookcode', siblinglikebookcode = '$siblinglikebookcode' where seedid = $seedid";
    $result = mysqli_query($conn, $query);
    if($result)   
        echo "1";
