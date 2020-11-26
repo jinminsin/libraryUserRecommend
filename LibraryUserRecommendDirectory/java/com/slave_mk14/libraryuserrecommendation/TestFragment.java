@@ -13,19 +13,22 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class TestFragment extends Fragment {
-    TextView quest;//질의
-    Button tBtn,fBtn;//버튼
-    String question = "";
-    String upBtnText = "";
-    String downBtnText = "";
+    private TextView quest;//질의
+    private Button tBtn,fBtn;//버튼
+    private String question = "";
+    private String upBtnText = "";
+    private String downBtnText = "";
     //질의문
 
-    String flag = "";
-    View.OnClickListener tBtnClick,fBtnClick;
+    private String flag = "";
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        if(!MainActivity.mUser.getLikeBookCode().equals("-1"))
+        {
+            MainActivity.fManager.goTestResultFragment(R.id.contentFragment,"C",TestFragment.this);
+        }
 
         View view = inflater.inflate(R.layout.fragment_test, container, false);
 
@@ -39,7 +42,7 @@ public class TestFragment extends Fragment {
                 flag += "T";
                 Log.e("input = T","flag : " + flag);
                 /* QuestionHashmap의 data의 길이가 1일 경우(답에 도달함) */
-                if(QuestionHashmap.questionHash.get(flag).length == 2) {
+                if(DataHashmap.questionHash.get(flag).length == 2) {
                     Log.e("move result view","flag : " + flag);
                     /* result Fragment로 이동 */
                     MainActivity.fManager.goTestResultFragment(R.id.contentFragment,flag,TestFragment.this);
@@ -56,7 +59,7 @@ public class TestFragment extends Fragment {
                 flag += "F";
                 Log.e("input = F","flag : " + flag);
                 /* QuestionHashmap의 data의 길이가 1일 경우(답에 도달함) */
-                if(QuestionHashmap.questionHash.get(flag).length == 2) {
+                if(DataHashmap.questionHash.get(flag).length == 2) {
                     Log.e("move result view","flag : " + flag);
                     /* result Fragment로 이동 */
                     MainActivity.fManager.goTestResultFragment(R.id.contentFragment,flag,TestFragment.this);
@@ -71,9 +74,9 @@ public class TestFragment extends Fragment {
     }
 
     void setTextQuestionAndBtn(){
-        question = QuestionHashmap.questionHash.get(flag)[0];
-        upBtnText = QuestionHashmap.questionHash.get(flag)[1];
-        downBtnText = QuestionHashmap.questionHash.get(flag)[2];
+        question = DataHashmap.questionHash.get(flag)[0];
+        upBtnText = DataHashmap.questionHash.get(flag)[1];
+        downBtnText = DataHashmap.questionHash.get(flag)[2];
         quest.setText(question);
         tBtn.setText(upBtnText);
         fBtn.setText(downBtnText);

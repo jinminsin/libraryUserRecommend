@@ -1,5 +1,6 @@
 package com.slave_mk14.libraryuserrecommendation;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,19 +11,29 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-    static FragmentHelper fManager = new FragmentHelper();
+    static FragmentHelper fManager;
     static User mUser = null;
+    static TabLayout tab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(mUser == null){
-            startActivity(new Intent(this, LogInActivity.class));
-        }
+        startActivityForResult(new Intent(this, LogInActivity.class), 0);
+    }
 
-        TabLayout tab = findViewById(R.id.tab);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        setMainView();
+    }
+
+    public void setMainView(){
+        tab = findViewById(R.id.tab);
+
+        fManager = new FragmentHelper();
         fManager.initialFragment(this);
 
         ArrayList<Integer> images = new ArrayList<>();
@@ -37,13 +48,15 @@ public class MainActivity extends AppCompatActivity {
         tab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                //do stuff here
                 fManager.moveFragment(tab.getPosition(), R.id.contentFragment,MainActivity.this);
             }
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {}
+            public void onTabUnselected(TabLayout.Tab tab) {
+            }
             @Override
-            public void onTabReselected(TabLayout.Tab tab) {}
+            public void onTabReselected(TabLayout.Tab tab) {
+                fManager.moveFragment(tab.getPosition(), R.id.contentFragment,MainActivity.this);
+            }
         });
     }
 }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,30 +13,37 @@ import androidx.fragment.app.Fragment;
 
 public class PostContentFragment extends Fragment {
 
-    TextView a,b,c,d;
-    Post post_items;
+    private TextView title, owner, createDate, subtitle;
+    private Post content;
+    private Button btn;
 
 
-    public PostContentFragment(Post a){
-        post_items = a;
+    public PostContentFragment(Post content){
+        this.content = content;
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_postcontent,container,false);
-        a= rootView.findViewById(R.id.pd_title);//title
-        b= rootView.findViewById(R.id.pd_owner);//owner
-        c= rootView.findViewById(R.id.pd_createDate);//createDate
-        d= rootView.findViewById(R.id.pd_subtitle);//subtitle
+        title= rootView.findViewById(R.id.pd_title);//title
+        owner= rootView.findViewById(R.id.pd_owner);//owner
+        createDate= rootView.findViewById(R.id.pd_createDate);//createDate
+        subtitle= rootView.findViewById(R.id.pd_subtitle);//subtitle
+        btn = rootView.findViewById(R.id.bBtn);
 
-        a.setText(post_items.getTitle());
-        b.setText(post_items.getOwner());
-        c.setText(post_items.getCreateDate());
-        d.setText(post_items.getSubtitle());
+        title.setText(content.getTitle());
+        owner.setText(content.getOwner());
+        createDate.setText(content.getCreateDate());
+        subtitle.setText(content.getSubtitle());
+        btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                MainActivity.fManager.endPostContentFragment(R.id.contentFragment,PostContentFragment.this);
+            }
+        });
 
-        //yeahhh 는 yeah밑의 Fragment
-        getFragmentManager().beginTransaction().replace(R.id.yeahhh,new CommentListFragment(post_items.getId())).commit();
+        getFragmentManager().beginTransaction().replace(R.id.commentList,new CommentListFragment(content.getId())).commit();
 
         return rootView;
     }

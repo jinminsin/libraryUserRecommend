@@ -1,7 +1,6 @@
 package com.slave_mk14.libraryuserrecommendation;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,16 +21,15 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-//게시글이 나오는곳
 
 public class PostListFragment extends Fragment {
-    ArrayList<Post> post_items;
-    ListView post_listView;
-    private static AdapterPost Post_Adapter;
-    int id;
+    private ArrayList<Post> list;
+    private ListView listView;
+    private AdapterPost adapter;
+    private int id;
 
-    public PostListFragment(int i){
-        id = i;
+    public PostListFragment(int cid){
+        id = cid;
     }
 
 
@@ -39,8 +37,8 @@ public class PostListFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_postlist,container,false);
-        post_listView = (ListView)rootView.findViewById(R.id.Post_ListView);
-        post_items = new ArrayList<>();
+        listView = (ListView)rootView.findViewById(R.id.Post_ListView);
+        list = new ArrayList<>();
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -51,13 +49,12 @@ public class PostListFragment extends Fragment {
                     for(int i=0;i<jsonArray.length();i++){
                         JSONObject obj = jsonArray.getJSONObject(i);
                         Post item = new Post(obj.getInt("cid"),obj.getInt("id"),obj.getString("title"),obj.getString("subtitle"),obj.getString("owner"),obj.getString("createDate"),obj.getString("password"));
-                        post_items.add(item);
+                        list.add(item);
                     }
-                    Log.e("확인확인",""+response);
-                    Log.e("확인확인",""+jsonArray.getJSONObject(0).getInt("cid"));
-                    Post_Adapter = new AdapterPost(getContext(),post_items);
-                    post_listView.setAdapter(Post_Adapter);
-                    post_listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                    adapter = new AdapterPost(getContext(),list);
+                    listView.setAdapter(adapter);
+                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             Post item = (Post)parent.getItemAtPosition(position);
@@ -74,5 +71,3 @@ public class PostListFragment extends Fragment {
         return rootView;
     }
 }
-
-

@@ -1,6 +1,5 @@
 package com.slave_mk14.libraryuserrecommendation;
 
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -10,8 +9,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DBResponse {
-    //static String URL = "http://39.112.64.186/";
-    static String URL = "http://192.168.0.17/";
+    static String URL = "http://39.112.64.186/";
+    //static String URL = "http://192.168.0.17/";
 
     static void loginResponse(RequestQueue q, String id, String pw, Response.Listener<String> listener){
         userDBResponse res = new userDBResponse(URL+ "login.php",id,pw,listener);
@@ -25,6 +24,17 @@ public class DBResponse {
         q.add(res);
         //Return String "0"(중복),"-1"(실패),"1"(성공)
     }//회원가입
+
+    static void saveBookCodeResponse(RequestQueue q, int seedid,String likeBookCode,String siblingLikeBookCode,Response.Listener<String> listener){
+        userDBResponse res = new userDBResponse(URL+ "saveLikeBookCode.php",seedid, likeBookCode, siblingLikeBookCode, listener);
+        q.add(res);
+        //Return String "-1"(실패),"1"(성공)
+    }
+
+    static void searchRecommendBookListResponse(RequestQueue q, String bookCode,Response.Listener<String> listener){
+        bookDBResponse res = new bookDBResponse(URL+ "book.php",bookCode, listener);
+        q.add(res);
+    }
 
     static void searchCommunityResponse(RequestQueue q, Response.Listener<String> listener){
         communityDBResponse res = new communityDBResponse(URL+ "community.php",listener);
@@ -56,6 +66,21 @@ public class DBResponse {
         //Return String "-1","1"
     }//댓글 작성
 
+    static class bookDBResponse extends StringRequest {
+        private Map<String, String> map;
+
+        public bookDBResponse(String url, String bookcode, Response.Listener<String> listener) {
+            super(Method.POST, url, listener, null);
+            map = new HashMap<>();
+            map.put("bookcode", bookcode);
+        }
+
+        @Override
+        protected Map<String, String> getParams() throws AuthFailureError {
+            return map;
+        }
+    }
+
     static class userDBResponse extends StringRequest {
         private Map<String, String> map;
 
@@ -64,6 +89,14 @@ public class DBResponse {
             map = new HashMap<>();
             map.put("id", id);
             map.put("pw", pw);
+        }
+
+        public userDBResponse(String url, int seedid,String likeBookCode,String siblingLikeBookCode, Response.Listener<String> listener) {
+            super(Method.POST, url, listener, null);
+            map = new HashMap<>();
+            map.put("seedid", ""+seedid);
+            map.put("likebookcode",likeBookCode);
+            map.put("siblinglikebookcode", siblingLikeBookCode);
         }
 
         @Override

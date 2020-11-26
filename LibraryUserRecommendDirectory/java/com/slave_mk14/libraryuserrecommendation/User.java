@@ -1,14 +1,21 @@
 package com.slave_mk14.libraryuserrecommendation;
 
 public class User {
-    int seedid;//시드 아이디
-    String id; //아이디
-    String likeBookCode;//특징
+    private int seedid;//시드 아이디
+    private String id; //아이디
+    private String likeBookCode;//특징
+    private String siblingLikeBookCode;
 
-    public User(int seedid, String id, String likeBookCode){
+    public User(int seedid, String id, String likeBookCode, String siblingLikeBookCode){
         this.seedid=seedid;
         this.id=id;
         this.likeBookCode=likeBookCode;
+        this.siblingLikeBookCode=siblingLikeBookCode;
+    }
+
+    public void saveLikeBookCode(String likeBookCode,String siblingLikeBookCode){
+        this.likeBookCode=likeBookCode;
+        this.siblingLikeBookCode=siblingLikeBookCode;
     }
 
     public int getSeedid() {
@@ -33,5 +40,13 @@ public class User {
 
     public void setLikeBookCode(String likeBookCode){
         this.likeBookCode = likeBookCode;
+    }
+
+    public String getSiblingLikeBookCode(){
+        return siblingLikeBookCode;
+    }
+
+    public void setSiblingLikeBookCode(String siblingLikeBookCode){
+        this.siblingLikeBookCode = siblingLikeBookCode;
     }
 }
