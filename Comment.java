@@ -1,30 +1,28 @@
 package com.slave_mk14.libraryuserrecommendation;
 
 class Comment {
+    private int seedid;
     private int pid;//게시판 아이디
     private int id;
     private String subtitle;//댓글 내용
     private String owner;//댓글 아이디
     private String createDate;//생성일
-    private String password;//댓글 비밀번호
 
-    public Comment(int pid, String subtitle, String owner, String createDate , String password) {
+    public Comment(int seedid, int pid, String subtitle, String owner, String createDate) {
+        this.seedid = seedid;
         this.pid = pid;
         this.subtitle = subtitle;
         this.owner = owner;
         this.createDate = createDate;
-        this.password = password;
-
     }
 
-    public Comment(int pid, int id, String subtitle, String owner, String createDate , String password) {
+    public Comment(int seedid, int pid, int id, String subtitle, String owner, String createDate) {
+        this.seedid = seedid;
         this.pid = pid;
         this.id = id;
         this.subtitle = subtitle;
         this.owner = owner;
         this.createDate = createDate;
-        this.password = password;
-
     }
 
     public int getPid() {
@@ -61,19 +59,19 @@ class Comment {
         this.subtitle = subtitle;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getSeedid() {
+        return seedid;
+    }
+
+    public void setSeedid(int seedid) {
+        this.seedid = seedid;
     }
 }

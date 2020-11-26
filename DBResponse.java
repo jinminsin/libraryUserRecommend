@@ -72,6 +72,12 @@ public class DBResponse {
         //Return String "-1","1"
     }//댓글 작성
 
+    static void deleteCommentResponse(RequestQueue q, int seedid, int id, Response.Listener<String> listener){
+        commentDBResponse res = new commentDBResponse(URL+ "deleteComment.php", seedid, id, listener);
+        q.add(res);
+        //Return String "-1","1"
+    }//댓글 작성
+
     static class bookDBResponse extends StringRequest {
         private Map<String, String> map;
 
@@ -137,12 +143,12 @@ public class DBResponse {
         public postDBResponse(String url, Post p, Response.Listener<String> listener) {
             super(Method.POST, url, listener, null);
             map = new HashMap<>();
+            map.put("seedid",""+p.getSeedid());
             map.put("cid", ""+p.getCid());
             map.put("title",p.getTitle());
             map.put("subtitle",p.getSubtitle());
             map.put("owner",p.getOwner());
             map.put("createDate",p.getCreateDate());
-            map.put("password",p.getPassword());
         }
 
         @Override
@@ -160,14 +166,21 @@ public class DBResponse {
             map.put("pid", ""+pid);
         }
 
+        public commentDBResponse(String url, int seedid, int id, Response.Listener<String> listener) {
+            super(Method.POST, url, listener, null);
+            map = new HashMap<>();
+            map.put("seedid", ""+seedid);
+            map.put("id", ""+id);
+        }
+
         public commentDBResponse(String url, Comment c, Response.Listener<String> listener) {
             super(Method.POST, url, listener, null);
             map = new HashMap<>();
+            map.put("seedid",""+c.getSeedid());
             map.put("pid", ""+c.getPid());
             map.put("subtitle",c.getSubtitle());
             map.put("owner",c.getOwner());
             map.put("createDate",c.getCreateDate());
-            map.put("password",c.getPassword());
         }
 
         @Override

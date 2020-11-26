@@ -31,12 +31,9 @@ public class CreatePostFragment extends Fragment {
 
         a.setText(post_item.getOwner());
         b.setText(post_item.getCreateDate());
-        c.setText(post_item.getPassword());
         d.setText(post_item.getTitle());
         e.setText(post_item.getSubtitle());
 
-        //post_item의 id를 받아와서 밑에 띄워줌
-        //getFragmentManager().beginTransaction().replace(R.id.yeahh,new PostListFragment(post_item.getId())).commit();
 
 
         return rootView;
