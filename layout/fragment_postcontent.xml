@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:paddingLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#000"
+        android:textSize="16dp"
+        android:id="@+id/pd_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:paddingLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/pd_title"
+        android:textColor="#000"
+        android:fontFamily="@font/nanumbarungothic"
+        android:textSize="15dp"
+        android:id="@+id/pd_owner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:paddingLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@id/pd_owner"
+        android:layout_below="@id/pd_title"
+        android:textColor="#000"
+        android:fontFamily="@font/nanumbarungothic"
+        android:textSize="15dp"
+        android:id="@+id/pd_createDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:paddingLeft="5dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/pd_createDate"
+        android:textColor="#000"
+        android:fontFamily="@font/nanumbarungothic"
+        android:textSize="18dp"
+        android:id="@+id/pd_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        />
+
+
+    <!--경계선!-->
+    <View
+        android:id="@+id/pdu_line"
+        android:layout_below="@id/pd_subtitle"
+        android:background="@drawable/gradient"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <TextView
+        android:id="@+id/pd_comText"
+        android:layout_below="@id/pdu_line"
+        android:textColor="#000"
+        android:fontFamily="@font/nanumbarungothic"
+        android:textSize="25dp"
+        android:text="댓글"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_below="@id/pd_comText"
+        android:id="@+id/pdd_line"
+        android:background="@drawable/gradient"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <!--댓글!-->
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:id="@+id/commentList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bBtn"
+        android:layout_below="@id/pdd_line"
+        android:orientation="vertical"></LinearLayout>
+
+    <Button
+        android:id="@+id/bBtn"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border_backbtn"
+        android:layout_alignParentBottom="true"
+        android:text="BACK FOR CLICK" />
+
+</RelativeLayout>

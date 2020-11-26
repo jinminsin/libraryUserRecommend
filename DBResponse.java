@@ -31,6 +31,12 @@ public class DBResponse {
         //Return String "-1"(실패),"1"(성공)
     }
 
+    static void resetBookCodeResponse(RequestQueue q, int seedid, Response.Listener<String> listener){
+        userDBResponse res = new userDBResponse(URL+ "saveLikeBookCode.php",seedid, "-1", "-1", listener);
+        q.add(res);
+        //Return String "-1"(실패),"1"(성공)
+    }
+
     static void searchRecommendBookListResponse(RequestQueue q, String bookCode,Response.Listener<String> listener){
         bookDBResponse res = new bookDBResponse(URL+ "book.php",bookCode, listener);
         q.add(res);

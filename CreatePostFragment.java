@@ -36,7 +36,7 @@ public class CreatePostFragment extends Fragment {
         e.setText(post_item.getSubtitle());
 
         //post_item의 id를 받아와서 밑에 띄워줌
-        getFragmentManager().beginTransaction().replace(R.id.yeahh,new PostListFragment(post_item.getId())).commit();
+        //getFragmentManager().beginTransaction().replace(R.id.yeahh,new PostListFragment(post_item.getId())).commit();
 
 
         return rootView;
