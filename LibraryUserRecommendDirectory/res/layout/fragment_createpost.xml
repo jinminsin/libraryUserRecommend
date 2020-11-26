@@ -75,13 +75,14 @@
 
 
     <TextView
+        android:maxLines="1"
         android:layout_marginTop="5dp"
         android:layout_below="@id/line1"
         android:id="@+id/korean_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/nanumbarungothic"
-        android:text="제목edit"
+        android:text="제목editText해야됩니다 아저씨"
         android:textColor="#000"
         android:textSize="20dp" />
 
@@ -96,30 +97,34 @@
 
 
     <TextView
+        android:maxLength="25"
+        android:maxLines="20"
         android:layout_marginTop="10dp"
         android:id="@+id/korean_subjec"
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/korean_title"
         android:fontFamily="@font/nanumbarungothic"
-        android:text="내용edit"
+        android:text="내용editText해야됩니다 아저씨"
         android:textColor="#000"
         android:textSize="20dp" />
 
 
     <LinearLayout
+        android:layout_above="@id/cBtn"
         android:id="@+id/yeahh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/korean_subjec"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical">
+    </LinearLayout>
 
     <Button
         android:id="@+id/cBtn"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/yeahh"
-        android:layout_centerHorizontal="true"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
         android:background="@drawable/border_backbtn"
         android:fontFamily="@font/nanumbarungothicbold"
         android:text="취소"

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="700dp">
+
+
+    <!--추천목록!-->
+    <TextView
+        android:id="@+id/likeBookTypeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="@font/nanumbarungothic"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000"
+        android:textSize="25dp" />
+
+
+    <!--추천아이템!-->
+    <ListView
+        android:id="@+id/bookList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/likeBookTypeTitle"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:divider="@android:color/transparent"
+        android:fontFamily="@font/nanumbarungothic"
+        android:listSelector="@android:color/transparent"
+        android:textColor="#000" />
+
+</RelativeLayout>

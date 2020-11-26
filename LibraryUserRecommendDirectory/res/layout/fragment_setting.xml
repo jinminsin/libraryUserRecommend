@@ -39,7 +39,7 @@
         android:fontFamily="@font/nanumbarungothicbold"
         android:background="@drawable/border_backbtn"
         android:textSize="15dp"
-        android:text="이 버튼을 누를시 초기화됩니다"
+        android:text="버튼을 누를시 추천값이 초기화됩니다"
         android:id="@+id/reBtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
