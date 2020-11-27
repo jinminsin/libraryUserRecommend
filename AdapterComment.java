@@ -47,6 +47,10 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.ViewHold
         list.add(data);
     }
 
+    void clearItem(){
+        list.clear();
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView commentSubTitle, commentOwner, commentCreateDate;
         Button delBtn;

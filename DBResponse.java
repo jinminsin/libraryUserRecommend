@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class DBResponse {
     static String URL = "http://39.112.64.186/";
-    //static String URL = "http://192.168.0.17/";
+    //static String URL = "http://172.30.1.45/";
 
     static void loginResponse(RequestQueue q, String id, String pw, Response.Listener<String> listener){
         userDBResponse res = new userDBResponse(URL+ "login.php",id,pw,listener);

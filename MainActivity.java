@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.inputmethodservice.Keyboard;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -21,7 +22,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startActivityForResult(new Intent(this, LogInActivity.class), 0);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if(mUser == null)
+            startActivityForResult(new Intent(this, LogInActivity.class), 0);
+        else
+            setMainView();
     }
 
     @Override

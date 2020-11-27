@@ -1,95 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/setting"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/pfimg_layout"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headline"
         android:background="@drawable/border_setting"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:layout_width="350dp"
-        android:layout_height="150dp">
-
-
-        <ImageView
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:id="@+id/pf_image"
-            android:layout_width="130dp"
-            android:layout_height="130dp" />
-
-        <ImageView
-            android:layout_marginTop="30dp"
-            android:layout_width="170dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/pf_image"
-            android:paddingLeft="10dp" />
-
-    </RelativeLayout>
-
-
-    <RelativeLayout
-        android:background="@drawable/border_setting"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:layout_below="@id/pfimg_layout"
-        android:layout_width="350dp"
-        android:layout_marginBottom="20dp"
-        android:layout_height="400dp">
+        android:layout_margin="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/reBtn">
 
         <TextView
-            android:textColor="#000"
-            android:fontFamily="@font/nanumbarungothicbold"
-            android:paddingTop="30dp"
-            android:paddingLeft="10dp"
-            android:text="TextView"
-            android:id="@+id/s_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:id="@+id/headlineText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="30dp"
+            android:padding="30dp"
+            android:fontFamily="@font/nanumbarungothic"
+            android:text="메롱메롱"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+        </TextView>
 
-        <TextView
-            android:layout_centerVertical="true"
-            android:textColor="#000"
-            android:fontFamily="@font/nanumbarungothicbold"
-            android:layout_below="@+id/s_id"
-            android:paddingTop="30dp"
-            android:paddingLeft="10dp"
-            android:text="TextView"
-            android:id="@+id/s_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:textColor="#000"
-            android:fontFamily="@font/nanumbarungothicbold"
-            android:layout_below="@+id/s_name"
-            android:paddingTop="30dp"
-            android:paddingLeft="10dp"
-            android:text="TextView"
-            android:id="@+id/s_createDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </RelativeLayout>
 
     <Button
         android:id="@+id/reBtn"
-        android:layout_width="250dp"
-        android:layout_height="80dp"
-        android:layout_below="@id/pfimg_layout"
-        android:layout_alignBaseline="@id/pfimg_layout"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:background="@drawable/border_backbtn"
         android:fontFamily="@font/nanumbarungothicbold"
         android:text="다시 조사해보고 싶어요"
+        android:padding="30dp"
         android:textColor="#000"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headline"
+        app:layout_constraintBottom_toTopOf="@id/userinfo"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/userinfo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp"
+        android:background="@drawable/border_setting"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/reBtn">
+
+        <TextView
+            android:id="@+id/uid"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:text="아이디"
+            android:textColor="#000"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/mUserid"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ulikeCode"
+            app:layout_constraintVertical_weight="1" />
+
+        <TextView
+            android:id="@+id/mUserid"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintVertical_weight="1"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:layout_margin="10dp"
+            android:text="test"
+            app:layout_constraintLeft_toRightOf="@id/uid"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/mUserlikeCode"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/ulikeCode"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintVertical_weight="1"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:text="제1선호 종류"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/uid"
+            app:layout_constraintRight_toLeftOf="@id/mUserlikeCode"
+            app:layout_constraintBottom_toTopOf="@id/usiblinglikeCode"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/mUserlikeCode"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintVertical_weight="1"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:text="test"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mUserid"
+            app:layout_constraintLeft_toRightOf="@id/ulikeCode"
+            app:layout_constraintBottom_toTopOf="@id/mUsersiblingLikeCode"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/usiblinglikeCode"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintVertical_weight="1"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:text="제2선호 종류"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ulikeCode"
+            app:layout_constraintRight_toLeftOf="@id/mUsersiblingLikeCode"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/mUsersiblingLikeCode"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintVertical_weight="1"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:text="test"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mUserlikeCode"
+            app:layout_constraintLeft_toRightOf="@id/usiblinglikeCode"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#000" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

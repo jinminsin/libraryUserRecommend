@@ -126,8 +126,16 @@ public class LogInActivity extends AppCompatActivity {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+
+        View view = getCurrentFocus();
+
+        if(view != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+            if (imm != null)
+                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+
         return true;
     }
 }
