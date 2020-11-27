@@ -1,65 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <TextView
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
         android:id="@+id/d_owner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="TextView"
         android:textColor="#000"
-        android:textSize="10dp"
+        android:textSize="12dp"
+        android:fontFamily="@font/nanumbarungothic"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
         android:id="@+id/d_subtitle"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:maxLines="1"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/nanumbarungothic"
         android:text="TextView"
         android:textColor="#000"
-        android:textSize="15dp"
-        app:layout_constraintTop_toBottomOf="@id/d_owner"
+        android:textSize="18dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        />
+        app:layout_constraintRight_toLeftOf="@id/delBtn"
+        app:layout_constraintTop_toBottomOf="@id/d_owner" />
 
     <TextView
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
         android:id="@+id/d_createDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:text="TextView"
         android:textColor="#000"
-        android:textSize="10dp"
-        app:layout_constraintTop_toBottomOf="@id/d_subtitle"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="12dp"
+        android:fontFamily="@font/nanumbarungothic"
         app:layout_constraintLeft_toLeftOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/d_subtitle" />
 
+    <Button
+        android:id="@+id/delBtn"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:text="삭제"
+        android:background="@drawable/border_backbtn"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/nanumbarungothic"
+        app:layout_constraintLeft_toRightOf="@id/d_subtitle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/d_createDate"/>
 
-    <TextView
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:id="@+id/d_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="#000"
-        android:textSize="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/d_subtitle"
-        app:layout_constraintLeft_toRightOf="@id/d_createDate"/>
+    <View
+        android:id="@+id/commentLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/gradient"
+        app:layout_constraintTop_toBottomOf="@id/d_createDate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

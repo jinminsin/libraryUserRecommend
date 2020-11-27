@@ -1,44 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/community"
+    <TextView
+        android:id="@+id/communityTitle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:fontFamily="@font/nanumbarungothic"
+        android:text="커뮤니티"
+        android:textColor="#000"
+        android:textSize="30dp"
+        android:layout_margin="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/list"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <View
+        android:id="@+id/communityLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/gradient"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/communityTitle" />
 
-            <TextView
-                android:fontFamily="@font/nanumbarungothic"
-                android:textColor="#000"
-                android:textSize="30dp"
-                android:layout_gravity="center_horizontal"
-                android:text="커뮤니티"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/CommunityList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/communityLine" />
 
-            <View
-                android:background="@drawable/gradient"
-                android:layout_width="match_parent"
-                android:layout_height="3dp"/>
-
-            <ListView
-                android:layout_margin="10dp"
-                android:divider="@drawable/gradient"
-                android:dividerHeight="1dp"
-                android:fontFamily="@font/nanumbarungothic"
-                android:id="@+id/Community_ListView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-
-    </FrameLayout>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
