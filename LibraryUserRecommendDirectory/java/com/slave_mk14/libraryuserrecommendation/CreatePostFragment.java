@@ -12,7 +12,14 @@ import android.widget.TextView;
 
 public class CreatePostFragment extends Fragment {
 
-    TextView a,b,c,d,e;
+    //글쓰기 textview id : createpost
+    //exit button id :post_exit
+    //등록 button id : post_enroll
+    //View id: post_line
+    //Edit Text 제목 id: cp_title
+    //Edit Text 내용 id : cp_subtitle
+
+
     Post post_item;
 
     public CreatePostFragment(Post a){
@@ -22,22 +29,6 @@ public class CreatePostFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_createpost,container,false);
-        a = rootView.findViewById(R.id.pm_owner);//owner
-        b = rootView.findViewById(R.id.pm_crateDate);//crateDate
-        c = rootView.findViewById(R.id.pm_password);//password
-        d = rootView.findViewById(R.id.pm_title);//title
-        e = rootView.findViewById(R.id.pm_sub); // subtitle
-
-
-        a.setText(post_item.getOwner());
-        b.setText(post_item.getCreateDate());
-        c.setText(post_item.getPassword());
-        d.setText(post_item.getTitle());
-        e.setText(post_item.getSubtitle());
-
-        //post_item의 id를 받아와서 밑에 띄워줌
-        getFragmentManager().beginTransaction().replace(R.id.yeahh,new PostListFragment(post_item.getId())).commit();
-
 
         return rootView;
     }

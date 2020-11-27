@@ -1,31 +1,31 @@
 package com.slave_mk14.libraryuserrecommendation;
 
 class Post {
+    private int seedid;
     private int cid;
     private int id;
     private String title;
     private String subtitle;
     private String owner;
     private String createDate;
-    private String password;
 
-    public Post(int cid, String title, String subtitle, String owner, String createDate, String password){
+    public Post(int seedid, int cid, String title, String subtitle, String owner, String createDate){
+        this.seedid = seedid;
         this.cid = cid;
         this.title = title;
         this.subtitle = subtitle;
         this.owner = owner;
         this.createDate = createDate;
-        this.password = password;
     }
 
-    public Post(int cid, int id, String title, String subtitle, String owner, String createDate, String password){
+    public Post(int seedid, int cid, int id, String title, String subtitle, String owner, String createDate){
+        this.seedid= seedid;
         this.cid = cid;
         this.id = id;
         this.title = title;
         this.subtitle = subtitle;
         this.owner = owner;
         this.createDate = createDate;
-        this.password = password;
     }
 
     public int getCid() {
@@ -68,19 +68,19 @@ class Post {
         this.createDate = createDate;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getSeedid() {
+        return seedid;
+    }
+
+    public void setSeedid(int seedid) {
+        this.seedid = seedid;
     }
 }

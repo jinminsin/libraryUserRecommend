@@ -4,12 +4,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -19,19 +19,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-
 public class CommunityListFragment extends Fragment {
 
-    private ArrayList<Community> list;
-    private ListView listView;
+    private RecyclerView list;
     private AdapterCommunity adapter;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_communitylist,container,false); //view 띄움
-        listView = (ListView)rootView.findViewById(R.id.Community_ListView);
-        list = new ArrayList<>();
+        list = rootView.findViewById(R.id.CommunityList);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(container.getContext());
+        list.setLayoutManager(linearLayoutManager);
+
+        adapter = new AdapterCommunity(this);
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override
@@ -43,17 +43,9 @@ public class CommunityListFragment extends Fragment {
                     for(int i=0;i<jsonArray.length();i++){
                         JSONObject obj = jsonArray.getJSONObject(i);
                         Community item = new Community(obj.getString("name"),obj.getString("detail"),obj.getString("owner"),obj.getString("createDate"));
-                        list.add(item);
+                        adapter.addItem(item);
                     }
-
-                    adapter = new AdapterCommunity(getContext(), list);
-                    listView.setAdapter(adapter);
-                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            MainActivity.fManager.goPostFragment(position+1,R.id.contentFragment, CommunityListFragment.this);
-                        }
-                    });
+                    list.setAdapter(adapter);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

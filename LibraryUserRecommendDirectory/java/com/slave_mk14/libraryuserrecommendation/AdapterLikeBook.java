@@ -1,57 +1,62 @@
 package com.slave_mk14.libraryuserrecommendation;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdapterLikeBook extends ArrayAdapter {
-
-    private Context context;
-    private ArrayList<LikeBook> list;
-
-    public AdapterLikeBook(Context context,ArrayList list){
-        super(context,0,list);
-        this.context = context;
-        this.list = list;
-    }
-
-    class ViewHolder{
-        TextView bookTypeTitle;
-        ListView booklist;
-    }
+public class AdapterLikeBook extends RecyclerView.Adapter<AdapterLikeBook.ViewHolder> {
+    private ArrayList<LikeBook> list = new ArrayList<>();
+    LinearLayoutManager linearLayoutManager;
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        final AdapterLikeBook.ViewHolder viewHolder;
+    public AdapterLikeBook.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.likebooklist, parent, false);
+        linearLayoutManager = new LinearLayoutManager(view.getContext());
+        return new AdapterLikeBook.ViewHolder(view);
+    }
 
-        if (convertView == null) {
-            LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-            convertView = layoutInflater.inflate(R.layout.likebooklist, parent, false);
+    @Override
+    public void onBindViewHolder(@NonNull AdapterLikeBook.ViewHolder holder, int position) {
+        holder.onBind(list.get(position), position);
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return list.size();
+    }
+
+    void addItem(LikeBook data) {
+        list.add(data);
+    }
+
+
+    class ViewHolder extends RecyclerView.ViewHolder{
+        TextView title;
+        RecyclerView bookList;
+
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            title = itemView.findViewById(R.id.likeBookCodeTitle);
+            bookList = itemView.findViewById(R.id.booklist);
         }
 
-        viewHolder = new AdapterLikeBook.ViewHolder();
-        viewHolder.bookTypeTitle = convertView.findViewById(R.id.likeBookTypeTitle);
-        viewHolder.booklist = convertView.findViewById(R.id.bookList);
-
-        LikeBook likebook = list.get(position);
-
-        viewHolder.bookTypeTitle.setText(likebook.getTitle());
-
-        AdapterBook adapter = new AdapterBook(getContext(), likebook.getBook());
-        viewHolder.booklist.setAdapter(adapter);
-
-
-        return convertView;
+        void onBind(LikeBook book, int position){
+            title.setText(book.getTitle());
+            bookList.setLayoutManager(linearLayoutManager);
+            AdapterBook adapter = new AdapterBook();
+            adapter.addItem(book.getBook());
+            bookList.setAdapter(adapter);
+        }
     }
 }

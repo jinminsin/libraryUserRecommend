@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class DBResponse {
     static String URL = "http://39.112.64.186/";
-    //static String URL = "http://192.168.0.17/";
+    //static String URL = "http://172.30.1.45/";
 
     static void loginResponse(RequestQueue q, String id, String pw, Response.Listener<String> listener){
         userDBResponse res = new userDBResponse(URL+ "login.php",id,pw,listener);
@@ -27,6 +27,12 @@ public class DBResponse {
 
     static void saveBookCodeResponse(RequestQueue q, int seedid,String likeBookCode,String siblingLikeBookCode,Response.Listener<String> listener){
         userDBResponse res = new userDBResponse(URL+ "saveLikeBookCode.php",seedid, likeBookCode, siblingLikeBookCode, listener);
+        q.add(res);
+        //Return String "-1"(실패),"1"(성공)
+    }
+
+    static void resetBookCodeResponse(RequestQueue q, int seedid, Response.Listener<String> listener){
+        userDBResponse res = new userDBResponse(URL+ "saveLikeBookCode.php",seedid, "-1", "-1", listener);
         q.add(res);
         //Return String "-1"(실패),"1"(성공)
     }
@@ -62,6 +68,12 @@ public class DBResponse {
 
     static void addCommentResponse(RequestQueue q, Comment c, Response.Listener<String> listener){
         commentDBResponse res = new commentDBResponse(URL+ "createComment.php",c,listener);
+        q.add(res);
+        //Return String "-1","1"
+    }//댓글 작성
+
+    static void deleteCommentResponse(RequestQueue q, int seedid, int id, Response.Listener<String> listener){
+        commentDBResponse res = new commentDBResponse(URL+ "deleteComment.php", seedid, id, listener);
         q.add(res);
         //Return String "-1","1"
     }//댓글 작성
@@ -131,12 +143,12 @@ public class DBResponse {
         public postDBResponse(String url, Post p, Response.Listener<String> listener) {
             super(Method.POST, url, listener, null);
             map = new HashMap<>();
+            map.put("seedid",""+p.getSeedid());
             map.put("cid", ""+p.getCid());
             map.put("title",p.getTitle());
             map.put("subtitle",p.getSubtitle());
             map.put("owner",p.getOwner());
             map.put("createDate",p.getCreateDate());
-            map.put("password",p.getPassword());
         }
 
         @Override
@@ -154,14 +166,21 @@ public class DBResponse {
             map.put("pid", ""+pid);
         }
 
+        public commentDBResponse(String url, int seedid, int id, Response.Listener<String> listener) {
+            super(Method.POST, url, listener, null);
+            map = new HashMap<>();
+            map.put("seedid", ""+seedid);
+            map.put("id", ""+id);
+        }
+
         public commentDBResponse(String url, Comment c, Response.Listener<String> listener) {
             super(Method.POST, url, listener, null);
             map = new HashMap<>();
+            map.put("seedid",""+c.getSeedid());
             map.put("pid", ""+c.getPid());
             map.put("subtitle",c.getSubtitle());
             map.put("owner",c.getOwner());
             map.put("createDate",c.getCreateDate());
-            map.put("password",c.getPassword());
         }
 
         @Override

@@ -1,68 +1,68 @@
 package com.slave_mk14.libraryuserrecommendation;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class AdapterCommunity extends ArrayAdapter implements AdapterView.OnItemClickListener {
-    private Context context;
-    private List<Community> list;
+public class AdapterCommunity extends RecyclerView.Adapter<AdapterCommunity.ViewHolder>  {
+    private ArrayList<Community> list = new ArrayList<>();
+    private CommunityListFragment fragment;
 
-    public AdapterCommunity(Context context, ArrayList list){
-        super(context,0,list);
-        this.context = context;
-        this.list = list;
-
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        //TODO
-    }
-
-    class ViewHolder{
-        TextView name;
-        TextView owner;
-        TextView detail;
-        TextView createDate;
+    public AdapterCommunity(CommunityListFragment fragment){
+        this.fragment = fragment;
     }
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public AdapterCommunity.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.communitylist, parent, false);
+        return new AdapterCommunity.ViewHolder(view);
+    }
 
-        final ViewHolder viewHolder;
+    @Override
+    public void onBindViewHolder(@NonNull AdapterCommunity.ViewHolder holder, int position) {
+        holder.onBind(list.get(position));
+    }
 
-        if(convertView == null){
-            LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-            convertView = layoutInflater.inflate(R.layout.communitylist,parent,false);
+    @Override
+    public int getItemCount() {
+        return list.size();
+    }
+
+    void addItem(Community data) {
+        list.add(data);
+    }
+
+    class ViewHolder extends RecyclerView.ViewHolder{
+        TextView communityName, communityCreateDate, communityDetail, communityOwner;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MainActivity.fManager.goPostFragment(getAdapterPosition() + 1, list.get(getAdapterPosition()).getName(), R.id.contentFragment, fragment);
+                }
+            });
+
+            communityName = itemView.findViewById(R.id.c_name);
+            communityCreateDate = itemView.findViewById(R.id.c_createDate);
+            communityDetail = itemView.findViewById(R.id.c_detail);
+            communityOwner = itemView.findViewById(R.id.c_owner);
         }
 
-        viewHolder = new ViewHolder();
-        viewHolder.name = (TextView)convertView.findViewById(R.id.c_name);
-        viewHolder.detail = (TextView)convertView.findViewById(R.id.c_detail);
-        viewHolder.owner = (TextView)convertView.findViewById(R.id.c_owner);
-        viewHolder.createDate = (TextView)convertView.findViewById(R.id.c_createDate);
-
-        final Community community_item = (Community)list.get(position);
-
-        viewHolder.createDate.setText(community_item.getCreateDate());
-        viewHolder.name.setText(community_item.getName());
-        viewHolder.owner.setText(community_item.getOwner());
-        viewHolder.detail.setText(community_item.getDetail());
-
-        return convertView;
-
-
+        void onBind(Community data){
+            communityName.setText(data.getName());
+            communityOwner.setText(data.getOwner());
+            communityDetail.setText(data.getDetail());
+            communityCreateDate.setText(data.getCreateDate());
+        }
     }
 }

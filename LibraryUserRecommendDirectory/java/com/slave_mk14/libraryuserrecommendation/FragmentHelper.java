@@ -66,9 +66,9 @@ public class FragmentHelper {
         fragment.getFragmentManager().beginTransaction().replace(viewId, testResultFragment).commit();
     }
 
-    public void goPostFragment(int cid, int viewId, Fragment fragment)
+    public void goPostFragment(int cid, String name, int viewId, Fragment fragment)
     {
-        postFragment = new PostListFragment(cid);
+        postFragment = new PostListFragment(cid, name);
         fragment.getFragmentManager().beginTransaction().replace(viewId, postFragment).commit();
     }
 
