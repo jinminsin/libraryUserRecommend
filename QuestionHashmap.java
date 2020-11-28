@@ -1,4 +1,4 @@
-package com.slave_mk14.libraryuserrecommendation;
+package com.example.recommend;
 
 import java.util.HashMap;
 

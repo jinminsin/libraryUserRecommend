@@ -1,4 +1,4 @@
-package com.slave_mk14.libraryuserrecommendation;
+package com.example.recommend;
 
 public class User {
     int seedid;//시드 아이디

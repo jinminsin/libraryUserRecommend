@@ -1,4 +1,4 @@
-package com.slave_mk14.libraryuserrecommendation;
+package com.example.recommend;
 
 import android.os.Bundle;
 import android.util.Log;
