@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/postContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/commentInput">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/bBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/nanumbarungothic"
+                android:gravity="left|center_vertical"
+                android:text="← 돌아가기"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/postContentTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="TextView"
+                android:textColor="#000"
+                android:textSize="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bBtn"
+                app:layout_constraintRight_toLeftOf="@id/delPostBtn"/>
+
+            <TextView
+                android:id="@+id/postContentOwner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/nanumbarungothic"
+                android:text="TextView"
+                android:textColor="#000"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/postContentTitle" />
+
+            <TextView
+                android:id="@+id/postContentCreateDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/nanumbarungothic"
+                android:text="TextView"
+                android:textColor="#000"
+                android:textSize="15dp"
+                app:layout_constraintLeft_toRightOf="@id/postContentOwner"
+                app:layout_constraintTop_toBottomOf="@id/postContentTitle" />
+
+            <Button
+                android:id="@+id/delPostBtn"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="삭제"
+                android:background="@drawable/border_backbtn"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/nanumbarungothic"
+                app:layout_constraintLeft_toRightOf="@id/postContentTitle"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/postContentCreateDate"/>
+
+            <TextView
+                android:id="@+id/postContentSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/nanumbarungothic"
+                android:minHeight="300dp"
+                android:text="TextView"
+                android:textColor="#000"
+                android:textSize="18dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/postContentCreateDate" />
+
+
+            <!--경계선!-->
+            <View
+                android:id="@+id/commentTopLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/gradient"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/postContentSubtitle" />
+
+            <TextView
+                android:id="@+id/postContentBottomTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/nanumbarungothic"
+                android:text="댓글"
+                android:textColor="#000"
+                android:textSize="25dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/commentTopLine" />
+
+            <View
+                android:id="@+id/commentBottomLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/gradient"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/postContentBottomTitle" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/CommentList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/commentBottomLine">
+            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/commentInput"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <View
+            android:id="@+id/commentInputLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"></View>
+
+        <EditText
+            android:id="@+id/createComment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/nanumbarungothicbold"
+            android:hint="댓글을 입력하는 곳입니다."
+            android:textColor="#000"
+            android:textSize="15dp"
+            android:paddingLeft="10dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="@id/commentInputLine"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/commitBtn"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Button
+            android:id="@+id/commitBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="등록"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/nanumbarungothic"
+            app:layout_constraintTop_toTopOf="@id/commentInputLine"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
