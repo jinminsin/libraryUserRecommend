@@ -74,6 +74,13 @@ public class CreatePostFragment extends Fragment {
             }
         });
 
+        exitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.fManager.endCreatePostFragment(R.id.contentFragment,CreatePostFragment.this);
+            }
+        });
+
         return rootView;
     }
 }
