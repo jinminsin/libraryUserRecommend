@@ -1,133 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
 
     <TextView
-        android:layout_marginTop="5dp"
-        android:paddingLeft="5dp"
-        android:id="@+id/pm_title"
-        android:layout_width="wrap_content"
+        android:id="@+id/createPostTopTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:fontFamily="@font/nanumbarungothic"
-        android:text="TextView"
-        android:textColor="#000"
-        android:textSize="10dp" />
-
-    <TextView
-        android:layout_marginTop="5dp"
-        android:paddingLeft="5dp"
-        android:textSize="10dp"
-        android:layout_toRightOf="@id/pm_title"
-        android:textColor="#000"
-        android:fontFamily="@font/nanumbarungothic"
-        android:text="TextView"
-        android:id="@+id/pm_sub"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:layout_marginTop="5dp"
-        android:paddingLeft="5dp"
-        android:textSize="10dp"
-        android:layout_toRightOf="@id/pm_sub"
-        android:textColor="#000"
-        android:fontFamily="@font/nanumbarungothic"
-        android:text="TextView"
-        android:id="@+id/pm_owner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:layout_marginTop="5dp"
-        android:paddingLeft="5dp"
-        android:textSize="10dp"
-        android:layout_below="@id/pm_sub"
-        android:textColor="#000"
-        android:fontFamily="@font/nanumbarungothic"
-        android:text="TextView"
-        android:id="@+id/pm_crateDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:layout_marginTop="5dp"
-        android:paddingLeft="5dp"
-        android:layout_below="@id/pm_sub"
-        android:textSize="10dp"
-        android:layout_toRightOf="@id/pm_crateDate"
-        android:textColor="#000"
-        android:fontFamily="@font/nanumbarungothic"
-        android:text="TextView"
-        android:id="@+id/pm_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-
-    <View
-        android:layout_marginTop="4dp"
-        android:id="@+id/line1"
-        android:layout_below="@id/pm_password"
-        android:background="@drawable/gradient"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-
-
-    <TextView
-        android:maxLines="1"
-        android:layout_marginTop="5dp"
-        android:layout_below="@id/line1"
-        android:id="@+id/korean_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/nanumbarungothic"
-        android:text="제목editText해야됩니다 아저씨"
-        android:textColor="#000"
-        android:textSize="20dp" />
-
-
-    <View
-        android:layout_marginTop="4dp"
-        android:id="@+id/line2"
-        android:layout_below="@id/korean_title"
-        android:background="@drawable/gradient"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"/>
-
-
-    <TextView
-        android:maxLength="25"
-        android:maxLines="20"
-        android:layout_marginTop="10dp"
-        android:id="@+id/korean_subjec"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/korean_title"
-        android:fontFamily="@font/nanumbarungothic"
-        android:text="내용editText해야됩니다 아저씨"
-        android:textColor="#000"
-        android:textSize="20dp" />
-
-
-    <LinearLayout
-        android:layout_above="@id/cBtn"
-        android:id="@+id/yeahh"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/korean_subjec"
-        android:orientation="vertical">
-    </LinearLayout>
+        android:gravity="center_horizontal"
+        android:text="글쓰기"
+        android:textSize="18dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/cBtn"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:background="@drawable/border_backbtn"
-        android:fontFamily="@font/nanumbarungothicbold"
-        android:text="취소"
-        android:textSize="20dp" />
+        android:layout_margin="5dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/createPostTopTitle"
+        android:id="@+id/createCancelBtn"
+        android:background="@drawable/border_post_exit"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="40dp"
+        android:layout_height="30dp"/>
 
-</RelativeLayout>
+    <Button
+        android:layout_margin="10dp"
+        android:background="@drawable/border_cp"
+        android:text="등록"
+        android:id="@+id/postEnrollBtn"
+        app:layout_constraintBaseline_toBaselineOf="@id/createPostTopTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="40dp"
+        android:layout_height="35dp"/>
+
+    <View
+        android:layout_margin="5dp"
+        android:id="@+id/createPostTitleLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/gradient"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/postEnrollBtn"/>
+
+    <EditText
+        android:textSize="20dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:id="@+id/createPostTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nanumbarungothic"
+        android:hint="제목"
+        android:singleLine="true"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/createPostTitleLine"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/createPostSubtitle" />
+
+    <EditText
+        android:textSize="20dp"
+        android:fontFamily="@font/nanumbarungothic"
+        android:singleLine="false"
+        android:id="@+id/createPostSubtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="내용"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/createPostTitle"
+        app:layout_constraintVertical_bias="0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

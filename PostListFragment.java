@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -26,6 +27,7 @@ public class PostListFragment extends Fragment {
     private TextView title;
     private int id;
     private String name;
+    private Button createPostBtn;
 
     public PostListFragment(int cid, String name){
         id = cid;
@@ -37,8 +39,9 @@ public class PostListFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_postlist,container,false);
-        title = rootView.findViewById(R.id.postTitle);
+        title = rootView.findViewById(R.id.postTopTitle);
         list = rootView.findViewById(R.id.PostList);
+        createPostBtn = rootView.findViewById(R.id.createPostBtn);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(container.getContext());
         list.setLayoutManager(linearLayoutManager);
@@ -46,6 +49,13 @@ public class PostListFragment extends Fragment {
         adapter = new AdapterPost(this);
 
         title.setText(name);
+
+        createPostBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.fManager.goCreatePostFragment(id, R.id.contentFragment,PostListFragment.this);
+            }
+        });
 
         Response.Listener<String> responseListener = new Response.Listener<String>() {
             @Override

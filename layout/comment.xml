@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/d_owner"
+        android:id="@+id/commentOwner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -19,7 +19,7 @@
 
 
     <TextView
-        android:id="@+id/d_subtitle"
+        android:id="@+id/commentTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -29,10 +29,10 @@
         android:textSize="18dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/delBtn"
-        app:layout_constraintTop_toBottomOf="@id/d_owner" />
+        app:layout_constraintTop_toBottomOf="@id/commentOwner" />
 
     <TextView
-        android:id="@+id/d_createDate"
+        android:id="@+id/commentCreateDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -41,7 +41,7 @@
         android:textSize="12dp"
         android:fontFamily="@font/nanumbarungothic"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/d_subtitle" />
+        app:layout_constraintTop_toBottomOf="@id/commentTitle" />
 
     <Button
         android:id="@+id/delBtn"
@@ -51,9 +51,9 @@
         android:background="@drawable/border_backbtn"
         android:layout_margin="10dp"
         android:fontFamily="@font/nanumbarungothic"
-        app:layout_constraintLeft_toRightOf="@id/d_subtitle"
+        app:layout_constraintLeft_toRightOf="@id/commentTitle"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/d_createDate"/>
+        app:layout_constraintBottom_toBottomOf="@id/commentCreateDate"/>
 
     <View
         android:id="@+id/commentLine"
@@ -61,7 +61,7 @@
         android:layout_height="1dp"
         android:layout_margin="10dp"
         android:background="@drawable/gradient"
-        app:layout_constraintTop_toBottomOf="@id/d_createDate"
+        app:layout_constraintTop_toBottomOf="@id/commentCreateDate"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 

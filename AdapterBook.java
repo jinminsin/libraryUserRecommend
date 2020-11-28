@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class AdapterBook extends RecyclerView.Adapter<AdapterBook.ViewHolder> {
-
     private ArrayList<Book> list;
 
     @NonNull

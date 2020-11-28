@@ -13,6 +13,7 @@ public class FragmentHelper {
     private Fragment postFragment;
     private Fragment postContentFragment;
     private Fragment settingFragment;
+    private Fragment createPostFragment;
 
     public FragmentHelper(){
         mainFragment = new HomeFragment();
@@ -72,10 +73,23 @@ public class FragmentHelper {
         fragment.getFragmentManager().beginTransaction().replace(viewId, postFragment).commit();
     }
 
+    public void goCreatePostFragment(int cid, int viewId, Fragment fragment)
+    {
+        createPostFragment = new CreatePostFragment(cid);
+        fragment.getFragmentManager().beginTransaction().replace(viewId, createPostFragment).commit();
+    }
+
     public void goPostContentFragment(Post p, int viewId, Fragment fragment)
     {
         postContentFragment = new PostContentFragment(p);
         fragment.getFragmentManager().beginTransaction().replace(viewId, postContentFragment).commit();
+    }
+
+    public void endCreatePostFragment(int viewId, Fragment fragment)
+    {
+        fragment.getFragmentManager().beginTransaction().remove(createPostFragment).commit();
+        createPostFragment = null;
+        fragment.getFragmentManager().beginTransaction().replace(viewId, postFragment).commit();
     }
 
     public void endPostContentFragment(int viewId, Fragment fragment)

@@ -133,7 +133,7 @@ public class LogInActivity extends AppCompatActivity {
             InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
             if (imm != null)
-                imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
 
         return true;

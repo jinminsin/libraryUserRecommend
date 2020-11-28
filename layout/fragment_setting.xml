@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -8,28 +9,38 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/headline"
-        android:background="@drawable/border_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_margin="30dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@drawable/border_setting"
+        app:layout_constraintBottom_toTopOf="@id/reBtn"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/reBtn">
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/headlineText"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="30dp"
-            android:padding="30dp"
-            android:fontFamily="@font/nanumbarungothic"
-            android:text="메롱메롱"
-            android:gravity="center"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
-        </TextView>
+        <ImageView
+            android:id="@+id/sthumbimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/thumb"
+            app:layout_constraintBottom_toBottomOf="@id/headline"
+            app:layout_constraintEnd_toStartOf="@+id/sbookimg"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/sbookimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/read"
+            app:layout_constraintBottom_toBottomOf="@id/headline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sthumbimg" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -41,14 +52,14 @@
         android:layout_margin="10dp"
         android:background="@drawable/border_backbtn"
         android:fontFamily="@font/nanumbarungothicbold"
-        android:text="다시 조사해보고 싶어요"
         android:padding="30dp"
+        android:text="다시 조사해보고 싶어요"
         android:textColor="#000"
         android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@id/userinfo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/headline"
-        app:layout_constraintBottom_toTopOf="@id/userinfo"/>
+        app:layout_constraintTop_toBottomOf="@id/headline" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/userinfo"

@@ -29,16 +29,9 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         if(mUser == null)
-            startActivityForResult(new Intent(this, LogInActivity.class), 0);
+            startActivity(new Intent(this, LogInActivity.class));
         else
             setMainView();
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        setMainView();
     }
 
     public void setMainView(){

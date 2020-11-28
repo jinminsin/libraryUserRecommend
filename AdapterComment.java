@@ -58,9 +58,9 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.ViewHold
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            commentSubTitle = itemView.findViewById(R.id.d_subtitle);
-            commentCreateDate = itemView.findViewById(R.id.d_createDate);
-            commentOwner = itemView.findViewById(R.id.d_owner);
+            commentSubTitle = itemView.findViewById(R.id.commentTitle);
+            commentCreateDate = itemView.findViewById(R.id.commentCreateDate);
+            commentOwner = itemView.findViewById(R.id.commentOwner);
             delBtn = itemView.findViewById(R.id.delBtn);
         }
 

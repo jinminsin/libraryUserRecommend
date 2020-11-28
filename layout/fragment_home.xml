@@ -9,7 +9,7 @@
     android:background="@drawable/border_home_outline">
 
     <TextView
-        android:id="@+id/homeTitle"
+        android:id="@+id/homeTopTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -22,20 +22,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
-        android:id="@+id/titledivider"
+        android:id="@+id/homeTitleDivider"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:layout_margin="10dp"
         android:background="@drawable/gradient"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/homeTitle" />
+        app:layout_constraintTop_toBottomOf="@id/homeTopTitle" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/likeBookList"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constrainedHeight="true"
-        app:layout_constraintTop_toBottomOf="@id/titledivider"
+        app:layout_constraintTop_toBottomOf="@id/homeTitleDivider"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">

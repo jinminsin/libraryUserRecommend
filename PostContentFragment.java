@@ -1,7 +1,6 @@
 package com.slave_mk14.libraryuserrecommendation;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,7 +29,7 @@ public class PostContentFragment extends Fragment {
 
     private TextView title, owner, createDate, subtitle;
     private Post content;
-    private Button backBtn, inserCommentBtn;
+    private Button backBtn, insertCommentBtn;
     private RequestQueue requestQueue;
     private Response.Listener<String> searchCommentListener, addCommentListener;
     private boolean state = true;
@@ -48,14 +47,14 @@ public class PostContentFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_postcontent,container,false);
-        title= rootView.findViewById(R.id.pd_title);//title
-        owner= rootView.findViewById(R.id.pd_owner);//owner
-        createDate= rootView.findViewById(R.id.pd_createDate);//createDate
-        subtitle= rootView.findViewById(R.id.pd_subtitle);//subtitle
+        title= rootView.findViewById(R.id.postContentTitle);//title
+        owner= rootView.findViewById(R.id.postContentOwner);//owner
+        createDate= rootView.findViewById(R.id.postContentCreateDate);//createDate
+        subtitle= rootView.findViewById(R.id.postContentSubtitle);//subtitle
         backBtn = rootView.findViewById(R.id.bBtn);
 
         comment = rootView.findViewById(R.id.createComment);
-        inserCommentBtn = rootView.findViewById(R.id.commitBtn);
+        insertCommentBtn = rootView.findViewById(R.id.commitBtn);
 
         title.setText(content.getTitle());
         owner.setText(content.getOwner());
@@ -78,12 +77,12 @@ public class PostContentFragment extends Fragment {
                 if(response.equals("1")){
                     adapter.clearItem();
                     DBResponse.searchCommentResponse(requestQueue,content.getId(),searchCommentListener);
-                    state = true;
                 }
+                state = true;
             }
         };
 
-        inserCommentBtn.setOnClickListener(new View.OnClickListener() {
+        insertCommentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(comment.getText().length() > 0 && state) {

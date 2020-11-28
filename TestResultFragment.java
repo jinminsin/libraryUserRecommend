@@ -120,12 +120,13 @@ public class TestResultFragment extends Fragment {
             public void onResponse(String response) {
                if(response.equals("1"))
                {
-                   state=true;
                    MainActivity.mUser.saveLikeBookCode(resultBookCode,siblingResultBookCode);
                    MainActivity.fManager.endTestResultFragment(TestResultFragment.this);
                }
+                state=true;
             }
         };
+
         requestQueue = Volley.newRequestQueue(getContext());
 
         okBtn.setOnClickListener(new View.OnClickListener() {

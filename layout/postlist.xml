@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/p_title"
+        android:id="@+id/postTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/p_owner"
+        android:id="@+id/postOwner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -28,26 +28,26 @@
         android:text="TextView"
         android:textColor="#000"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/p_title" />
+        app:layout_constraintTop_toBottomOf="@id/postTitle" />
 
     <TextView
-        android:id="@+id/p_createDate"
+        android:id="@+id/postCreateDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:fontFamily="@font/nanumbarungothic"
         android:text="TextView"
         android:textColor="#000"
-        app:layout_constraintLeft_toRightOf="@id/p_owner"
-        app:layout_constraintTop_toBottomOf="@id/p_title"/>
+        app:layout_constraintLeft_toRightOf="@id/postOwner"
+        app:layout_constraintTop_toBottomOf="@id/postTitle"/>
 
     <View
-        android:id="@+id/titleLine"
+        android:id="@+id/postDivider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_margin="10dp"
         android:background="@drawable/gradient"
-        app:layout_constraintTop_toBottomOf="@id/p_createDate"
+        app:layout_constraintTop_toBottomOf="@id/postCreateDate"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 

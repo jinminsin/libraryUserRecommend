@@ -33,7 +33,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/pd_title"
+                android:id="@+id/postContentTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -44,7 +44,7 @@
                 app:layout_constraintTop_toBottomOf="@id/bBtn" />
 
             <TextView
-                android:id="@+id/pd_owner"
+                android:id="@+id/postContentOwner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -53,10 +53,10 @@
                 android:textColor="#000"
                 android:textSize="15dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pd_title" />
+                app:layout_constraintTop_toBottomOf="@id/postContentTitle" />
 
             <TextView
-                android:id="@+id/pd_createDate"
+                android:id="@+id/postContentCreateDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -64,11 +64,11 @@
                 android:text="TextView"
                 android:textColor="#000"
                 android:textSize="15dp"
-                app:layout_constraintLeft_toRightOf="@id/pd_owner"
-                app:layout_constraintTop_toBottomOf="@id/pd_title" />
+                app:layout_constraintLeft_toRightOf="@id/postContentOwner"
+                app:layout_constraintTop_toBottomOf="@id/postContentTitle" />
 
             <TextView
-                android:id="@+id/pd_subtitle"
+                android:id="@+id/postContentSubtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -78,21 +78,21 @@
                 android:textColor="#000"
                 android:textSize="18dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pd_createDate" />
+                app:layout_constraintTop_toBottomOf="@id/postContentCreateDate" />
 
 
             <!--경계선!-->
             <View
-                android:id="@+id/pdu_line"
+                android:id="@+id/commentTopLine"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/gradient"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pd_subtitle" />
+                app:layout_constraintTop_toBottomOf="@id/postContentSubtitle" />
 
             <TextView
-                android:id="@+id/pd_comText"
+                android:id="@+id/postContentBottomTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -101,16 +101,16 @@
                 android:textColor="#000"
                 android:textSize="25dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pdu_line" />
+                app:layout_constraintTop_toBottomOf="@id/commentTopLine" />
 
             <View
-                android:id="@+id/pdd_line"
+                android:id="@+id/commentBottomLine"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/gradient"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pd_comText" />
+                app:layout_constraintTop_toBottomOf="@id/postContentBottomTitle" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/CommentList"
@@ -120,7 +120,7 @@
                 android:orientation="vertical"
                 android:overScrollMode="never"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pdd_line">
+                app:layout_constraintTop_toBottomOf="@id/commentBottomLine">
             </androidx.recyclerview.widget.RecyclerView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

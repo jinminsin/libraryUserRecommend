@@ -52,10 +52,10 @@ public class AdapterCommunity extends RecyclerView.Adapter<AdapterCommunity.View
                 }
             });
 
-            communityName = itemView.findViewById(R.id.c_name);
-            communityCreateDate = itemView.findViewById(R.id.c_createDate);
-            communityDetail = itemView.findViewById(R.id.c_detail);
-            communityOwner = itemView.findViewById(R.id.c_owner);
+            communityName = itemView.findViewById(R.id.communityName);
+            communityCreateDate = itemView.findViewById(R.id.communityCreateDate);
+            communityDetail = itemView.findViewById(R.id.communityDetail);
+            communityOwner = itemView.findViewById(R.id.communityOwner);
         }
 
         void onBind(Community data){

@@ -1,18 +1,14 @@
 package com.slave_mk14.libraryuserrecommendation;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
     private ArrayList<Post> list = new ArrayList<>();
@@ -56,9 +52,9 @@ public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
                 }
             });
 
-            postTitle = itemView.findViewById(R.id.p_title);
-            postCreateDate = itemView.findViewById(R.id.p_createDate);
-            postOwner = itemView.findViewById(R.id.p_owner);
+            postTitle = itemView.findViewById(R.id.postTitle);
+            postCreateDate = itemView.findViewById(R.id.postCreateDate);
+            postOwner = itemView.findViewById(R.id.postOwner);
         }
 
         void onBind(Post data) {
